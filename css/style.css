@@ -215,6 +215,7 @@ button {
 .button-anim:hover:before {
     left: 75%;
     opacity: 1;
+    color: #0645AD;
 }
 
 
@@ -314,7 +315,7 @@ button {
 }
 
 .menu-link li a:hover {
-    color: ;
+    color: #0645AD;
 }
 
 
