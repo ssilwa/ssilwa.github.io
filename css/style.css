@@ -1141,6 +1141,15 @@ blockquote {
    background-color: #00aff0;
 }
 
+.more-contact{
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.more-contact li{
+    margin: 10px 0;
+}
+
 
 
 /* Syntax Highlighter */
