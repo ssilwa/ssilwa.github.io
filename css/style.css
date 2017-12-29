@@ -914,10 +914,10 @@ blockquote {
 }
 
 .end {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 40px;
     border: 2px dashed ;
-    line-height: 90px;
+    line-height:40px;
     display: block;
     font-size: 16px;
     letter-spacing: 1.5px;
