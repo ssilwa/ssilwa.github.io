@@ -344,6 +344,7 @@ button {
 
 }
 
+
 .my-detail .white-spacing {
     padding: 10px 0;
     border-bottom: 1px dashed #cccccc;
@@ -351,8 +352,26 @@ button {
 
 .my-detail .white-spacing2 {
     text-align: left;  
-    padding-left: 10px;
+    padding-left: 20px;
 }
+
+
+.my-detail .white-spacing_search {
+    border: 1px solid transparent;
+    padding: 10px 0;
+    border-bottom: 1px dashed #cccccc;
+    font-size: 10pt;
+}
+
+.my-detail input{
+    height:40px;
+    width: 200px;
+    padding: 10px;
+}
+.my-detail input:focus {
+    border-color: #171717;
+}
+
 
 .my-detail h1 {
     font-size: 20px;
@@ -390,7 +409,7 @@ button {
 .knowledge li {
     display: inline-block;
     color: #ffffff;
-    margin: 4px 4px;
+    margin: 3px 3px;
     padding: 10px 20px;
     font-size: 12px;
     letter-spacing: 0.6px;
@@ -651,6 +670,12 @@ div.blog-post {
     font-weight: 300;
     letter-spacing: 0.8px;
     font-family: 'BrandonGrotesque', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 
