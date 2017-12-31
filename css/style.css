@@ -355,6 +355,11 @@ button {
     padding-left: 20px;
 }
 
+.white-spacing2 li{
+    margin: 0px 20px;
+    list-style-type:circle;
+}
+
 
 .my-detail .white-spacing_search {
     border: 1px solid transparent;
