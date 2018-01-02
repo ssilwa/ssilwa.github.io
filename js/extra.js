@@ -23,6 +23,7 @@ function table_search() {
     }
 }
 
+// Function for post tag clicks
 $('.bg-color-1').click(function(){
     $("#searchInput").val("Introduction");
     $("#searchInput").keyup();
