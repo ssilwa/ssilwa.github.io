@@ -61,10 +61,6 @@ html {
     min-height: 100%;
 }
 
-::selection {
-    background-color: ;
-    color: #ffffff;
-}
 
 ::-moz-selection {
     background-color: ;
@@ -421,8 +417,12 @@ button {
     margin-left: 0px;
     border-radius: 4px;
     cursor: default;
+    cursor: pointer;
 }
 
+.knowledge a {
+    color: #ffffff ;
+}
 
 
 /* My Portfolio */

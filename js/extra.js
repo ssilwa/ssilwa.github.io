@@ -22,3 +22,18 @@ function table_search() {
         }
     }
 }
+
+$('.bg-color-1').click(function(){
+    $("#searchInput").val("Introduction");
+    $("#searchInput").keyup();
+});
+
+$('.bg-color-4').click(function(){
+    $("#searchInput").val("Math");
+    $("#searchInput").keyup();
+});
+
+$('.bg-color-2').click(function(){
+    $("#searchInput").val("CS");
+    $("#searchInput").keyup();
+});
