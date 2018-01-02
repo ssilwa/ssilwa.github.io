@@ -1,2 +1,3 @@
-#[Personal Website](www.sandeepsilwal.com) :)
+# Code for my personal website:
+www.sandeepsilwal.com :)
 
