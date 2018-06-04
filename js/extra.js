@@ -38,3 +38,13 @@ $('.bg-color-2').click(function(){
     $("#searchInput").val("CS");
     $("#searchInput").keyup();
 });
+
+$('.bg-color-5').click(function(){
+    $("#searchInput").val("Visualization");
+    $("#searchInput").keyup();
+});
+
+$('.bg-color-6').click(function(){
+    $("#searchInput").val("Data");
+    $("#searchInput").keyup();
+});

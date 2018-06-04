@@ -1181,6 +1181,17 @@ blockquote {
     list-style-type:circle;
 }
 
+.general-bullet{
+    font-size: 16px;
+    text-decoration: none !important;
+    font-family: 'BrandonGrotesque', sans-serif;
+}
+
+.general-bullet li{
+    margin: 10px 50px;
+    list-style-type:circle;
+}
+
 
 
 /* Syntax Highlighter */
