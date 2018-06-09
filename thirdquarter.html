@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+    <!-- Meta Tag -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+
+    <title>Sandeep Silwal</title>
+
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon/infinity.ico">
+    <link rel="apple-touch-icon" sizes="144x144" type="image/x-icon" href="images/favicon/infinty.jpg">
+    
+    <!-- All CSS Plugins -->
+    <link rel="stylesheet" type="text/css" href="css/plugin.css">
+    
+    <!-- Main CSS Stylesheet -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <!-- Google Web Fonts  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700">
+    
+    <!-- Syntax Highlighter  -->
+    <link rel="stylesheet" type="text/css" href="css/syntax/shCore.css">
+    <link rel="stylesheet" type="text/css" href="css/syntax/shThemeDefault.css">
+    
+    
+    <!-- HTML5 shiv and Respond.js support IE8 or Older for HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+	   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+
+  </head>
+
+ <body>
+
+	
+     
+      
+    
+    
+    <div id="main">
+        <div class="container">
+            <div class="row">
+            	
+               
+                 
+                 <!-- About Me (Left Sidebar) Start -->
+                 <div class="col-md-3">
+                   <div class="about-fixed">
+                      <div class="my-detail"> 
+                     <div class="white-spacing">
+                           <ul class="menu-link">
+                              <li><a href="/">Home</a></li>
+                               <li><a href="about">About</a></li>
+                               <li><a href="contact">Contact</a></li>
+                            </ul>
+                      </div>
+                       <div class="white-spacing_search">
+                        <input type="text" id="searchInput" onkeyup="table_search()" placeholder="Enter Tag To Search!" title="Type in a tag">
+                       </div>
+
+                        <div class="white-spacing">
+                            <h1>Recent Posts</h1>
+                            <div class="white-spacing2">
+                            <ul>
+                            <li>Hello World!</li>
+                          </ul> 
+                          </div>
+                       </div> 
+                    </div>
+                  </div>
+                </div>
+                <!-- About Me (Left Sidebar) End -->
+                
+                  
+                 <!-- Blog Post (Right Sidebar) Start -->
+                 <div class="col-md-9">
+                    <div class="col-md-12 page-body">
+                    	<div class="row">
+                    		
+                            
+                            <div class="sub-title">
+                           		<h2> Post #4</h2>
+                                <a href="/" class="smoth-scroll"><i class="icon-home"></i></a>
+                             </div>
+                            
+                            
+                            <div class="col-md-12 content-page">
+                              <div class="col-md-12 blog-post">
+                            	
+                                
+                                <!-- Post Headline Start -->
+                                <div class="post-title">
+                                    <h1>Third Quarter Warriors: Reality or Fiction?</h1> 
+                                   </div>
+                                   <!-- Post Headline End -->
+                                    
+                                    
+                                <!-- Post Detail Start -->
+                                <div class="post-info">
+                                    <span>June 08, 2018 by <a href="#" target="_blank">Sandeep Silwal</a></span>
+                                </div>
+                                   <!-- Post Detail End -->
+<p> If you have been following the playoffs, you have heard quite a lot about the 'Third Quarter Warriors,' a menacing version of an already great team that appears in the third quarter. I wanted to see if this notion could be supported by data. To do this, I scrapped data on every NBA game this season (except Game 4 of the finals which I am watching right now). Then for each game, I calculated the point differentials of both teams before and after all four quarters. </p>
+
+<p> The first thing I noticed from this data is that most teams play a lot better at home than away, which is to be expected. Secondly, the Warriors do play noticeably better in the third quarter, especially when they are at home. Their point differential after the second quarter is 2.8 on average while their point differential after the third quarter is 8.16 on average, which means that the Warriors outscore their opponents by more than 5 points in the third quarter, on average. While this might sound like a tamer figure than what you would expect from hearing overzealous commentators, this is the largest increase across a quarter for all teams.</p>
+
+<p> After I finished my calculations, the challenge was visualizing the results in a meaningful way. This is where slope graphs come into play. Slope graphs are useful for visualizing how a quantity differs at two different points in time. I first learned about them from  <a href="http://www.storytellingwithdata.com/blog/2014/03/more-on-slopegraphs">this</a> excellent post by Cole Knaflic. This is exactly what I need since I am trying to compare points differentials across quarters. </p>
+
+<p>In the following interactive slope graph, you can pick your favorite NBA team and see how their point differential compares before and after each quarter, both home and away:
+
+
+ <select onchange="updateCoordinate(this.value); updateData(this.value); ">
+  <option value="GSW">GSW</option>
+  <option value="CLE">CLE</option>
+  <option value="ATL">ATL</option>
+  <option value="BOS">BOS</option>
+  <option value="BRK">BRK</option>
+  <option value="CHI">CHI</option>
+  <option value="CHO">CHO</option>
+  <option value="DAL">DAL</option>
+  <option value="DEN">DEN</option>
+  <option value="DET">DET</option>
+  <option value="HOU">HOU</option>
+  <option value="IND">IND</option>
+  <option value="LAC">LAC</option> 
+  <option value="LAL">LAL</option>
+  <option value="MEM">MEM</option>
+  <option value="MIA">MIA</option>
+  <option value="MIL">MIL</option>
+  <option value="MIN">MIN</option>
+  <option value="NOP">NOP</option>
+  <option value="NYK">NYK</option>
+  <option value="OKC">OKC</option>
+  <option value="ORL">ORL</option>
+  <option value="PHI">PHI</option>
+  <option value="PHO">PHO</option>
+  <option value="POR">POR</option> 
+  <option value="SAC">SAC</option>
+  <option value="SAS">SAS</option>
+  <option value="TOR">TOR</option>
+  <option value="UTA">UTA</option>
+  <option value="WAS">WAS</option>
+</select>
+</p>                                    
+
+
+<svg id = "postsvg" height="600" width="700">
+</svg>
+
+
+<script src="https://d3js.org/d3.v3.js"></script>
+<script>
+
+var home_line_count = 0;
+var away_line_count = 0;
+var curr_team = 'GSW';
+var m = -40;
+var b = 410;
+
+
+var home_data_holder = 
+{'ATL': [-1.2439024390243902, -3.8292682926829267, -5.609756097560975, -5],
+ 'BOS': [2.25, 2.4615384615384617, 4.576923076923077, 5],
+ 'BRK': [-1.6097560975609757, -3.1463414634146343, -3.097560975609756, -3],
+ 'CHI': [-0.9024390243902439, -3.2195121951219514, -4.829268292682927, -5],
+ 'CHO': [0.5, 1.2619047619047619, 2.1904761904761907, 1],
+ 'CLE': [0.42, 1.68, 2.08, 2],
+ 'DAL': [-0.7804878048780488, 0.7073170731707317, 0.4146341463414634, 0],
+ 'DEN': [0.6, 1.85, 4.2, 5],
+ 'DET': [0.5853658536585366, 2.6341463414634148, 2.048780487804878, 3],
+ 'GSW': [0.21568627450980393, 2.823529411764706, 8.156862745098039, 8],
+ 'HOU': [3.9607843137254903, 7.0, 9.137254901960784, 8],
+ 'IND': [-1.558139534883721, 0.813953488372093, 3.0697674418604652, 2],
+ 'LAC': [-0.4146341463414634, -0.14634146341463414, -1.2195121951219512, 1],
+ 'LAL': [-1.2926829268292683, -0.4146341463414634, 0.0, 0],
+ 'MEM': [0.4634146341463415, -0.8292682926829268, -1.3414634146341464, -3],
+ 'MIA': [1.6744186046511629, 2.4651162790697674, 1.558139534883721, 1],
+ 'MIL': [-0.20454545454545456, 0.8636363636363636, 1.9772727272727273, 1],
+ 'MIN': [1.744186046511628, 3.697674418604651, 5.441860465116279, 5],
+ 'NOP': [0.6888888888888889, 2.488888888888889, 0.9777777777777777, 1],
+ 'NYK': [0.8536585365853658, 2.341463414634146, 1.5609756097560976, 1],
+ 'OKC': [1.7045454545454546, 3.6818181818181817, 3.659090909090909, 5],
+ 'ORL': [0.2926829268292683, -2.707317073170732, -4.073170731707317, -4],
+ 'PHI': [4.8478260869565215, 5.891304347826087, 8.130434782608695, 8],
+ 'PHO': [-4.738095238095238, -6.904761904761905, -8.880952380952381, -10],
+ 'POR': [3.5813953488372094, 3.0697674418604652, 4.093023255813954, 4],
+ 'SAC': [-2.7804878048780486, -2.951219512195122, -4.7560975609756095, -6],
+ 'SAS': [1.744186046511628, 2.186046511627907, 3.9767441860465116, 6],
+ 'TOR': [4.086956521739131, 6.1521739130434785, 7.478260869565218, 9],
+ 'UTA': [0.6739130434782609, 3.717391304347826, 3.4130434782608696, 6],
+ 'WAS': [1.1590909090909092, 1.6136363636363635, 3.772727272727273, 3]};
+
+var away_data_holder = 
+{'ATL': [-1.146341463414634, -3.5609756097560976, -5.975609756097561, -7],
+ 'BOS': [1.1224489795918366, -1.2040816326530612, -0.30612244897959184, -1],
+ 'BRK': [-2.8292682926829267, -2.902439024390244, -2.292682926829268, -5],
+ 'CHI': [-1.9268292682926829, -3.926829268292683, -8.195121951219512, -10],
+ 'CHO': [0.36585365853658536, 0.07317073170731707, -1.048780487804878, -2],
+ 'CLE': [-0.058823529411764705, -0.23529411764705882, -0.6470588235294118, -1],
+ 'DAL': [-2.3902439024390243, -2.4390243902439024, -3.731707317073171, -6],
+ 'DEN': [-2.1219512195121952, -1.4146341463414633, -0.12195121951219512, -3],
+ 'DET': [-1.8048780487804879, -3.1707317073170733, -3.7560975609756095, -4],
+ 'GSW': [-0.30612244897959184, -0.3469387755102041, 4.448979591836735, 3],
+ 'HOU': [4.479166666666667, 5.916666666666667, 6.4375, 5],
+ 'IND': [0.6888888888888889, -0.6444444444444445, 0.17777777777777778, -1],
+ 'LAC': [-0.975609756097561, -2.5609756097560976, -1.6585365853658536, -1],
+ 'LAL': [-2.024390243902439, -2.1219512195121952, -2.292682926829268, -4],
+ 'MEM': [-4.170731707317073, -7.7560975609756095, -9.0, -10],
+ 'MIA': [0.29545454545454547, 0.1590909090909091, -2.272727272727273, -2],
+ 'MIL': [-1.8, -0.6666666666666666, -0.5333333333333333, -3],
+ 'MIN': [1.2272727272727273, 0.1590909090909091, -1.5454545454545454, -3],
+ 'NOP': [0.5, 1.2608695652173914, 1.1304347826086956, 0],
+ 'NYK': [-1.5853658536585367, -3.1707317073170733, -6.2439024390243905, -8],
+ 'OKC': [3.022727272727273, 1.2954545454545454, -0.6818181818181818, 0],
+ 'ORL': [-2.0, -5.7317073170731705, -5.780487804878049, -7],
+ 'PHI': [1.934782608695652, 0.9130434782608695, 1.891304347826087, 0],
+ 'PHO': [-2.951219512195122, -4.463414634146342, -8.878048780487806, -9],
+ 'POR': [-0.9534883720930233, 0.3953488372093023, 0.32558139534883723, 0],
+ 'SAC': [-2.1951219512195124, -4.902439024390244, -7.878048780487805, -9],
+ 'SAS': [-0.75, -1.8181818181818181, -1.9318181818181819, -3],
+ 'TOR': [-0.41304347826086957, 1.608695652173913, 1.5869565217391304, 3],
+ 'UTA': [-0.8936170212765957, 0.0425531914893617, 0.1702127659574468, 0],
+ 'WAS': [-1.2954545454545454, -1.3863636363636365, -0.9090909090909091, -3]}
+
+
+var home_team_line_holder = [];
+var home_team_text_holder = [];
+var home_team_left_circle_holder = [];
+var home_team_right_circle_holder = [];
+
+var away_team_line_holder = [];
+var away_team_text_holder = [];
+var away_team_left_circle_holder = [];
+var away_team_right_circle_holder = [];
+
+var coordinate_name_holder = [];
+
+  var width = 700,
+      height = 600;
+
+var svgContainer = d3.select("#postsvg").attr("width", width).attr("height", height);
+
+var lineFunction = d3.svg.line()
+                         .x(function(d) { return d.x; })
+                         .y(function(d) { return d.y; })
+                         .interpolate("linear");
+
+var team_header = svgContainer.append("text")
+        .attr("x", 250)             
+        .attr("y", 15)
+        .attr("text-anchor", "middle")  
+        .attr("font-family", "PT Serif")
+        .attr("font-size", 14)
+        .text("Team: " + curr_team);
+
+svgContainer.append("path")
+              .attr("d", lineFunction([{ "x": 500,   "y": 150},  { "x": 550,  "y": 150}]))
+              .attr("stroke", "blue")
+              .attr('opacity', 0.7)
+              .style("text-anchor", "middle");
+
+svgContainer.append("text")
+        .attr("x", 560)
+        .attr("y", 155)
+        .attr("font-family", "PT Serif")
+        .attr("font-size", 14)
+        .text("Home");
+
+svgContainer.append("path")
+              .attr("d", lineFunction([{ "x": 500,   "y": 200},  { "x": 550,  "y": 200}]))
+              .attr("stroke", "red")
+              .attr('opacity', 0.7)
+              .style("text-anchor", "middle");
+
+svgContainer.append("text")
+        .attr("x", 560)
+        .attr("y", 205)
+        .attr("font-family", "PT Serif")
+        .attr("font-size", 14)
+        .text("Away");        
+
+
+// Data for equally spaced lines
+var lineData = [ [{ "x": 50,   "y": 50},  { "x": 450,  "y": 50}],
+                 [{ "x": 50,   "y": 150},  { "x": 450,  "y": 150}],
+                 [{ "x": 50,   "y": 250},  { "x": 450,  "y": 250}],
+                 [{ "x": 50,   "y": 350},  { "x": 450,  "y": 350}],
+                 [{ "x": 50,   "y": 450},  { "x": 450,  "y": 450}]];
+
+
+
+function setupCoordinate(){
+  for (var i = 0; i < 5; i++){
+    svgContainer.append("path")
+                .attr("d", lineFunction(lineData[i]))
+                .attr("stroke", "black")
+                .attr("stroke-width", 3)
+                .style("stroke-dasharray", ("3, 3"))
+                .attr('opacity', 0.5)
+                .attr('id', 'path' + i.toString());
+
+    coordinate_name_holder[i] = svgContainer.append("text")
+        .attr("dx", 0)
+        .attr("dy", -5)
+        .append("textPath")
+        .attr("xlink:href","#path" + i.toString())
+        .attr("font-family", "PT Serif")
+        .attr("font-size", 14)
+        .text(9 - i*2.5 +  "pts");
+  };
+
+  svgContainer.append("text")
+        .attr("x", 150)             
+        .attr("y", 470)
+        .attr("text-anchor", "middle")  
+        .attr("font-family", "PT Serif")
+        .attr("font-size", 14)
+        .text("Before Quarter");
+
+ svgContainer.append("text")
+        .attr("x", 400)             
+        .attr("y", 470)
+        .attr("text-anchor", "middle")  
+        .attr("font-family", "PT Serif")
+        .attr("font-size", 14)
+        .text("After Quarter");
+};
+
+ svgContainer.append("text")
+        .attr('transform', 'translate(-75,350) rotate(-90)')
+        .attr("x", 100)             
+        .attr("y", 100)
+        .attr("text-anchor", "middle")  
+        .attr("font-family", "PT Serif")
+        .attr("font-size", 14)
+        .text("Points Differential");
+
+setupCoordinate();
+
+function updateCoordinate(team){
+  homedata = home_data_holder[team];
+  awaydata = away_data_holder[team];
+  maxval = Math.max(homedata[0], homedata[1], homedata[2], homedata[3]);
+  maxval = Math.max(0, maxval, awaydata[0], awaydata[1], awaydata[2], awaydata[3]);
+  minval = Math.min(homedata[0], homedata[1], homedata[2], homedata[3]);
+  minval = Math.min(0, minval, awaydata[0], awaydata[1], awaydata[2], awaydata[3]);
+
+  var A = Math.ceil(maxval);
+  var B = Math.floor(minval);
+  console.log(A);
+  console.log(B);
+  m = 400/(B-A);
+  b = 50-m*A;
+
+  for (var i = 0; i < 5; i++){
+    coordinate_name_holder[i].text(A - (A-B)/4*i + 'pts')
+  };
+};
+            
+
+function makeCircle(xval1, yval1, xval2, yval2, xval3, yval3, xval4, yval4){
+    home_team_left_circle_holder[home_line_count] = svgContainer.append("circle")
+                       .attr("cx", xval1)
+                       .attr("cy", yval1)
+                       .attr("r", 5)
+                       .style("fill", "orange")
+                       .attr('fill-opacity', 0.3)
+                       .style("stroke", "black")
+                       .style("stroke-width", 1)
+                       .text("hi");
+
+    home_team_right_circle_holder[home_line_count] = svgContainer.append("circle")
+                   .attr("cx", xval2)
+                   .attr("cy", yval2)
+                   .attr("r", 5)
+                   .style("fill", "orange")
+                   .attr('fill-opacity', 0.3)
+                   .style("stroke", "black")
+                   .style("stroke-width", 1);
+
+    away_team_left_circle_holder[away_line_count] = svgContainer.append("circle")
+                   .attr("cx", xval3)
+                   .attr("cy", yval3)
+                   .attr("r", 5)
+                   .style("fill", "orange")
+                   .attr('fill-opacity', 0.3)
+                   .style("stroke", "black")
+                   .style("stroke-width", 1);
+
+    away_team_right_circle_holder[away_line_count] = svgContainer.append("circle")
+                   .attr("cx", xval4)
+                   .attr("cy", yval4)
+                   .attr("r", 5)
+                   .style("fill", "orange")
+                   .attr('fill-opacity', 0.3)
+                   .style("stroke", "black")
+                   .style("stroke-width", 1);
+};
+
+
+function makeConnectingLine(yval1, yval2, yval3, yval4, q){
+      home_team_line_holder[home_line_count] =  svgContainer.append("path")
+              .attr("d", lineFunction([{ "x": 150,   "y": yval1},  { "x": 400,  "y": yval2}]))
+              .attr("stroke", "blue")
+              .attr('opacity', 0.7)
+              .style("text-anchor", "middle");
+
+      home_team_text_holder[home_line_count] = svgContainer.append("text")
+        .attr("x", 125)
+        .attr("y", yval1 + 3)
+        .attr("font-family", "PT Serif")
+        .attr("font-size", 12)
+        .text("Q"  + q);
+
+      away_team_line_holder[away_line_count] =  svgContainer.append("path")
+              .attr("d", lineFunction([{ "x": 150,   "y": yval3},  { "x": 400,  "y": yval4}]))
+              .attr("stroke", "red")
+              .attr('opacity', 0.7)
+              .style("text-anchor", "middle");
+
+      away_team_text_holder[away_line_count] = svgContainer.append("text")
+        .attr("x", 125)
+        .attr("y", yval3+3)
+        .attr("font-family", "PT Serif")
+        .attr("font-size", 12)
+        .text("Q"  + q);
+      home_line_count += 1;
+      away_line_count += 1;
+};
+
+function setupData(team){
+      home_teamdata = home_data_holder[team];
+      away_teamdata = away_data_holder[team];
+
+      makeCircle(150, m*0+b, 400, m*home_teamdata[0]+b, 150, m*0+b, 400, m*away_teamdata[0]+b );
+      makeConnectingLine(m*0+b, m*home_teamdata[0]+b,m*0+b, m*away_teamdata[0]+b, "1");
+
+      makeCircle(150, m*home_teamdata[0]+b, 400, m*home_teamdata[1]+b, 150, m*away_teamdata[0]+b, 400, m*away_teamdata[1]+b);
+      makeConnectingLine(m*home_teamdata[0]+b, m*home_teamdata[1]+b, m*away_teamdata[0]+b, m*away_teamdata[1]+b, "2");
+
+      makeCircle(150, m*home_teamdata[1]+b, 400, m*home_teamdata[2]+b, 150, m*away_teamdata[1]+b, 400, m*away_teamdata[2]+b);
+      makeConnectingLine(m*home_teamdata[1]+b, m*home_teamdata[2]+b,m*away_teamdata[1]+b, m*away_teamdata[2]+b, "3");
+
+      makeCircle(150, m*home_teamdata[2]+b, 400, m*home_teamdata[3]+b, 150, m*away_teamdata[2]+b, 400, m*away_teamdata[3]+b);
+      makeConnectingLine(m*home_teamdata[2]+b, m*home_teamdata[3]+b,m*away_teamdata[2]+b, m*away_teamdata[3]+b, "4")
+};
+
+setupData('GSW');
+
+function updateData(team){
+  home_teamdata = home_data_holder[team];
+  away_teamdata = away_data_holder[team];
+  console.log(home_teamdata);
+  console.log(away_teamdata);
+  for (var i=0; i < 4; i++){
+    if (i == 0){
+      var home_newdata = [{ "x": 150,   "y": m*0+b},  { "x": 400,  "y": m*home_teamdata[0]+b}];
+      var yval1 = m*0+b;
+      var yval2 = m*home_teamdata[0]+b;
+
+      var away_newdata = [{ "x": 150,   "y": m*0+b},  { "x": 400,  "y": m*away_teamdata[0]+b}];
+      var yval3 = m*0+b;
+      var yval4 = m*away_teamdata[0]+b;
+
+    }
+    else{
+      var home_newdata = [{ "x": 150,   "y": m*home_teamdata[i-1]+b},  { "x": 400,  "y": m*home_teamdata[i]+b}];
+      var yval1 = m*home_teamdata[i-1]+b;
+      var yval2 = m*home_teamdata[i]+b;
+
+      var away_newdata = [{ "x": 150,   "y": m*away_teamdata[i-1]+b},  { "x": 400,  "y": m*away_teamdata[i]+b}];
+      var yval3 = m*away_teamdata[i-1]+b;
+      var yval4 = m*away_teamdata[i]+b;
+    };
+
+
+  home_team_line_holder[i].transition().attr("d", lineFunction(home_newdata));
+  home_team_text_holder[i].transition().attr("y", yval1+3);
+  home_team_left_circle_holder[i].transition().attr("cy", yval1);
+  home_team_right_circle_holder[i].transition().attr("cy", yval2);
+
+  away_team_line_holder[i].transition().attr("d", lineFunction(away_newdata));
+  away_team_text_holder[i].transition().attr("y", yval3+3);
+  away_team_left_circle_holder[i].transition().attr("cy", yval3);
+  away_team_right_circle_holder[i].transition().attr("cy", yval4);
+
+  team_header.text("Team: " + team);
+  };
+};
+
+
+</script>
+
+                                                                
+                             </div>
+                              
+                         </div>
+                         </div>
+                                      
+                  </div>
+                  <!-- Blog Post (Right Sidebar) End -->
+                
+            </div>
+         </div>
+      </div>
+    
+    <!-- Back to Top Start -->
+    <a href="#" class="scroll-to-top"><i class="fa fa-long-arrow-up"></i></a>
+    <!-- Back to Top End -->
+    
+    
+    <!-- All Javascript Plugins  -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/plugin.js"></script>
+    
+    <!-- Main Javascript File  -->
+    <script type="text/javascript" src="js/scripts.js"></script>
+    
+    <!-- Syntax Highlighter Javascript File  -->
+    <script type="text/javascript" src="js/syntax/shCore.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushCss.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushJScript.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushPerl.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushPhp.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushPlain.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushPython.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushRuby.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushSql.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushVb.js"></script>
+    <script type="text/javascript" src="js/syntax/shBrushXml.js"></script>
+    
+
+    
+   </body>
+ </html>
