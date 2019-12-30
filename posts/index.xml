@@ -6,18 +6,18 @@
     <description>Recent content in Posts on Sandeep Silwal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Dec 2019 11:13:22 -0500</lastBuildDate>
+    <lastBuildDate>Mon, 30 Dec 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ssilwa.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>My First Post</title>
+      <title>Size of random convex hulls</title>
       <link>https://ssilwa.github.io/posts/my-first-post/</link>
-      <pubDate>Wed, 25 Dec 2019 11:13:22 -0500</pubDate>
+      <pubDate>Mon, 30 Dec 2019 00:00:00 +0000</pubDate>
       
       <guid>https://ssilwa.github.io/posts/my-first-post/</guid>
-      <description>$$\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887… $$</description>
+      <description>I recently came across a really nice way to determine the expected number of vertices of the convex hull of a point set picked uniformly at random from some convex body in $\mathbb{R}^2$. For instance, suppose we pick $n$ points uniformly at random from a unit square or unit circle. It turns out in these cases, the number of points on the convex hull is $O(\log n)$ and $O(n^{1/3})$ respectively.</description>
     </item>
     
   </channel>
