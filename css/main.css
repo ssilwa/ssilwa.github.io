@@ -421,6 +421,12 @@ ul {
     margin-top: -20px;
 }
 
+.papers ol{
+    list-style-position: outside;
+    margin-top: -20px;
+}
+
+
 .info h4{
     font-weight: 550;
 }
@@ -431,6 +437,10 @@ ul {
 
 .papers ul{
     font-weight: 100;
+}
+
+.papers li{
+    margin: 10px 0;
 }
 
 .info img{
