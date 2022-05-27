@@ -211,7 +211,7 @@ function story(id) {
 			<li>
 	  			<p> <b>Randomized Dimensionality Reduction for Facility Location and Single-Linkage Clustering</b> 
 	  			<br> Shyam Narayanan*, Sandeep Silwal*, Piotr Indyk, Or Zamir
-	  			<br> <em> ICML 202 </em> [<a href="https://arxiv.org/pdf/2107.01804.pdf">pdf</a>] [<a href="javascript:story('NSIZ21')">story</a>] [<a href="https://icml.cc/virtual/2021/poster/9975">video</a>] </p>
+	  			<br> <em> ICML 2022 </em> [<a href="https://arxiv.org/pdf/2107.01804.pdf">pdf</a>] [<a href="javascript:story('NSIZ21')">story</a>] [<a href="https://icml.cc/virtual/2021/poster/9975">video</a>] </p>
 
 				<div id="NSIZ21" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> We obtain dimensionality reduction bounds for facility location clustering and the minimum spanning tree problem which go beyond the classical Johnson-Lindenstrauss (JL) lemma. For context, the work of Makarychev et al. (STOC 2019) showed that for $k$-means clustering, one can obtain a dimension bound in terms of $\log k$, rather than $\log n$ where $n$ is the number of points. In the problems we consider, there is no parameter "$k$" to parameterize the dimension bound. Instead we use the doubling dimension, which is a measure of intrinsic dimensionality of the dataset: it is at most $O(\log n)$ in the worst-case (i.e. JL bound) but can also be $O(1)$ regardless of $n$. To obtain our bounds, we exploit 'local' properties of our problems inspired by existing algorithms. The paper has a cool experiment and figure showing that doubling dimension is not just an artifact of analysis and its impact can actually be measured in practice. </p></div>
 	  		</li>
@@ -237,7 +237,7 @@ function story(id) {
 			<li>  
 	  			<p> <b>Hardness and Algorithms for Robust and Sparse Optimization</b>
 	  				<br> Eric Price, Sandeep Silwal, Samson Zhou
-	  				<br> <em> ICML 2022 </em> [ pdf coming soon!] [<a href="javascript:story('PSZ22')">story</a>]  </p>
+	  				<br> <em> ICML 2022 </em> [pdf coming soon!] [<a href="javascript:story('PSZ22')">story</a>]  </p>
 
 	  				<div id="PSZ22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Optimization problems where one requires sparsity of variables, such as sparse regression or sparse PCA, are an important and well-studied class of problems. Many of these problems are known to be hard in the worst case, and the best theoretical algorithms have an exponential dependence on $k$, the sparsity parameter. We consider a natural version where we are promised that an optimal solution exists. Given this, we design algorithms for such problems with a reduced exponential dependence of $k/2$, all using the same underlying idea. To illustrate this, suppose we want to solve $Ax=b$ where we are promised a $k$-sparse solution $x$ exists. We first guess over all $k/2$ sparse vectors. We then "match" a fixed guess $y$ to the "correct" other $k/2$ sparse vector using fast nearest neighbor search data structures on the query $b-Ay$. This is the classical algorithmic idea of "meet in the middle." We also study (fine-grained) hardness of various formulations of sparse optimization problems and give reductions between sparse and robust regression, filling a gap in the literature.  </p></div>
 
