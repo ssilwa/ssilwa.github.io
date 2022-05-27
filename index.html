@@ -1,5 +1,19 @@
 <!DOCTYPE html>
 <html>
+
+<script>
+function story(id) {
+  var x = document.getElementById(id);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
+
+
 <head>
 	<meta name="generator" content="Hugo 0.62.0" />
 	<meta charset="utf-8" />
@@ -23,6 +37,24 @@
 
 </head>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="ready()"></script>
+
+<script>
+    function ready() {
+        renderMathInElement(document.body, {
+            delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "\\[", right: "\\]", display: true},
+                  {left: "$", right: "$", display: false},
+                  {left: "\\(", right: "\\)", display: false}
+              ]
+        });
+    }
+</script>
+
+
 
 
 <body>
@@ -44,92 +76,221 @@
 
 
 		
-	<div class="info">
+	<div class="info"> 
 		<img src="https://sandeepsilwal.com/pic_new.jpeg"> 
-		<h4>I am a third year graduate student at MIT where I am lucky to be advised by <a href="https://people.csail.mit.edu/indyk/">Piotr Indyk </a>. My research interests are broadly in theoretical computer science. Recently, I've been working in the Intersection of machine learning and classical algorithms, such as designing provable algorithms in various ML settings as well as using ML to inspire algorithm design. Previously, I have dabbled in sublinear algorithms, property testing, and various problems in probability. </h4>
+		<h4>Hi! I am a 4th year graduate student at MIT where I am lucky to be advised by <a href="https://people.csail.mit.edu/indyk/">Piotr Indyk </a>. </h4>
+		
+		<h4> My research interests are broadly in theoretical computer science. Recently, I've been working in the intersection of machine learning and classical algorithms by designing provable algorithms in various ML settings, such as efficient algorithms for large datasets, as well as using ML to inspire algorithm design. </h4>
+
+		<h4> Please see my publications below where I've tried to include a brief 'story' for every paper. My goal is to highlight the context in which it was written and what I find interesting about the problem and results. </h4>
 
 
 		<h4>I also help coordinate <a href="http://www.mit.edu/~algoh/"> Algorithms Office Hours </a> at MIT whose goal is to improve communication between theory and applications of algorithms.</h4>
 
-		<h4>You can contact me at {my last name}@mit.edu. </h4>
+		<h4>Feel free to contact me at {my last name}@mit.edu. </h4>
 
 	</div>
 
-	<div class="papers">
+	<div class="papers">  
 
-		<h3>Publications</h3>
+		<h2 style="padding-bottom:10px">Learning-Augmented & Data-Driven Algorithms</h2>
+
+		<ul>
+			
+
+			<li>  
+	  			<p> <b>Faster Fundamental Graph Algorithms via Learned Predictions </b>
+	  				<br> Justin Y. Chen, Sandeep Silwal, Ali Vakilian, Fred Zhang
+	  				<br> <em> ICML 2022 </em> [<a href="https://arxiv.org/abs/2204.12055">pdf</a>] [<a href="javascript:story('CSVZ22')">story</a>]  </p>
+
+	  				<div id="CSVZ22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> We extend the work of Dinitz et al. (NeurIPS, 2021) and study graph algorithms with the help of learned LP variables. We obtain a better bound for bipartite matching by taking the Hungarian method inspired algorithm of Dinitz et al. and incorporating a a flow perspective. We also give a learned variant of the classic Goldberg's algorithm for shortest-paths with negative edges. Interestingly, the vertex potentials that are often used in shortest-path algorthms are also the variables of an appropriate LP. Lastly, we obtain a host of other learning-based results by utilizing standard (efficient) reductions between graph problems. An interesting development was that for the matching case, the challenge was to utilize a (feasible) set of dual predictions whereas for shortest-paths, the challenge was to round a given set of predictions to first be feasible. After that, optimizing is easy: just run Dijkstra's!. Our expreiments were also on an interesting dataset: graphs where nodes represent countries and edges are currency exchange rates. By taking the logs of the rates, finding the most efficient way to transfer one curency to another is a cool textbook example of shortest-paths in action. </p></div>
+
+	  		</li>
+
+
+			<li>  
+	  			<p> <b>Triangle and Four Cycle Counting with Predictions in Graph Stream </b>
+	  				<br> Justin Y. Chen, Talya Eden, Piotr Indyk, Honghao Lin, Shyam Narayanan, Ronitt Rubinfeld, Sandeep Silwal, Tal Wagner, David Woodruff, Michael Zhang
+	  				<br> <em> ICLR 2022 </em> [<a href="https://arxiv.org/pdf/2203.09572.pdf">pdf</a>] [<a href="javascript:story('CEILNRSWWZ22')">story</a>] [<a href="https://www.dropbox.com/s/norgodz77wz22w5/Triangles%20ICLR%2022.pdf?dl=0">slides</a>] [<a href="javascript:story('CEILNRSWWZ22_code')">code</a>] </p>
+
+	  				<div id="CEILNRSWWZ22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Counting triangles in a graph stream is hard: we might accidently miss 'important' edges in the stream which contribute a lot to the global triangle count. This is where a predictor comes in: if we are given hints on which edges are important, the problem can be mitigated by simply keeping them, leading to improved space bounds. While simple, the observation is quite natural. In practice, there are graph datasets which are slow varying across time (think social network for ex). Theoretically, it turns out many prior algorithms can be reframed in the viewpoint of having access to a predictor. </p></div>
+
+	  				<div id="CEILNRSWWZ22_code" style="display: none; border:1.5px solid black;padding:3px;"><p> See the supplementary material <a href="https://openreview.net/forum?id=8in_5gN9I0">here</a>. </p></div>
+	  		</li>
+
+	  		<li>  
+	  			<p> <b>Learning-Augmented $k$-means Clustering </b> 
+	  				<br> Jon Ergun, Zhili Feng, Sandeep Silwal, David Woodruff, Samson Zhou
+
+	  				<br> <em> <b>Spotlight Presentation</b> at ICLR 2022</em> [<a href="https://arxiv.org/pdf/2110.14094.pdf">pdf</a>] [<a href="javascript:story('EFSWZ22')">story</a>] [<a href="https://www.dropbox.com/s/g069ubapd9xr5sg/k%20means%20iclr%2022.pdf?dl=0">slides</a>] </p>
+
+					<div id="EFSWZ22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> We consider the problem of $k$-means clustering with the help of a predictor which outputs 'noisy' labels for each point. If the predictor's hints are based on a sufficiently accurate clustering, we can obtain a clustering which can be arbitrarily close to optimum, thereby surprassing known approximation lower bounds (without predictions). Interestingly, it is not sufficient to just blindly follow the predictor's advice and one must post-process the hints. Our algorithms are inspired from robust mean estimation. The fact that we can overcome worst-case NP-hardness via learning is very cool to me and is something that should be explored more. </p></div>
+	  		</li>
+
+
+
+			<li>
+	  			<p> <b>Learning-based Support Estimation in Sublinear Time</b> 
+	  			<br> Talya Eden, Piotr Indyk, Shyam Narayanan, Ronitt Rubinfeld, Sandeep Silwal, Tal Wagner
+
+	  			<br> <em> <b>Spotlight Presentation</b> at ICLR 2021 </em> [<a href="https://arxiv.org/abs/2106.08396">pdf</a>] [<a href="javascript:story('EINRSW21')">story</a>] [<a href="javascript:story('EINRSW21_video')">video</a>] [<a href="https://www.dropbox.com/s/pcef3coyd6oh9jm/support%20poster%20iclr%2021.pdf?dl=0"> poster] </p>
+
+				<div id="EINRSW21" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> We consider the sample complexity of estimating the support size of a discrete distribution drawn from a subset of a possibly large domain $[n]$. Without any advice, the sample complexity is $O(n/\log n)$, barely sublinear. In our model, we assume approximate probabilities of each sample as advice. With this augmentation, the sample complexity drops significantly to $O(n^c)$ for $c &lt; 1$. Our experiments were based on internet search queries for which we could learn approximate underlying probabilities from historical data.</p></div>
+
+				<div id="EINRSW21_video" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> <a href="https://harvard.zoom.us/rec/play/9hC2pgMhN_a-tQ3hzxJ6mBwsErS9ecjmwucPGSFjJrJ18NE4zDv5m4aP1AU9QAIOFV_GU5y4jO4a5S0.Azqt-cHOzyVNiox9?continueMode=true&_x_zm_rtaid=OvAuHrM3TySIM5t7Dvmv_w.1653660390076.17fb8b7ed468b3a9226c3a934ad0be8f&_x_zm_rhtaid=900">45 min video</a>  <br> <a href="https://iclr.cc/virtual/2021/poster/2622">10 min video</a>  </p></div>
+
+	  		</li>
+
+
+		</ul>
+
+		<h2 style="padding-bottom:10px">Sublinear and Streaming Algorithms</h2>
+
+		<ul>
+
+			<li>
+	  			<p> <b>The White-Box Adversarial Data Stream Model</b>  
+	  			<br> Miklos Ajtai, Vladimir Braverman, T.S. Jayram, Sandeep Silwal, Alec Sun, David P. Woodruff, Samson Zhou
+
+	  			<br> <em> PODS 2022 </em>
+	  			<br> [<a href="https://arxiv.org/abs/2204.09136">pdf</a>] [<a href="javascript:story('ABJSSWZ22')">story</a>] [<a href="https://www.dropbox.com/scl/fi/38p1sskcyp7c1avbecoy8/while-box-pods-22.pptx?dl=0&rlkey=4ivm7qx4bbh15djqvlfxyrzln"> slides </a>] </p>
+
+				<div id="ABJSSWZ22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Streaming algorithms in the presence of an adaptive adversary has been well studied recently. Most papers are in the so called 'black-box' model where the adversary can only observe outputs of the algorithm to design future inputs. Motivated by real-world adversarial attacks, we consider a "white-box" model where the adversary can now also observe the internal randomness used by the algorithm. Unsurprisingly, many tasks become impossible without storing the entire stream. However, one can still obtain non-trivial algorithms. One example is if we assume the adversary is computationally bounded, then we can use the 'shortest integer solution' (SIS) problem to design streaming algorithms: the SIS matrix is used as a sketching matrix. Even if the adversary knows this matrix, it cannot find integer vectors in the kernel which is a property we exploit. More broadly, we employ collision-resistant hash functions as well as the classic Morris counter to design white-box robust algorithms.</p></div>
+	  		</li>
+
+			<li>
+	  			<p> <b>Adversarial Robustness of Streaming Algorithms through Importance Sampling</b>  
+	  			<br> Vladimir Braverman, Avinatan Hassidim, Yossi Matias, Mariano Schain, Sandeep Silwal, Samson Zhou
+
+	  			<br> <em> <b> Silver Best Paper Award</b> at Adversarial ML Workshop at ICML 2021; Final version at NeurIPS 2021 </em>
+	  			<br> [<a href="https://arxiv.org/pdf/2106.14952.pdf">pdf</a>] [<a href="javascript:story('BHMSSZ21')">story</a>] [<a href="https://nips.cc/virtual/2021/poster/28047">video</a>] [<a href="https://www.dropbox.com/s/k8v91k7mwihma6s/importance%20sampling%20neurips%2021.pdf?dl=0"> slides </a>] </p>
+
+				<div id="BHMSSZ21" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Adversarial robustness has garnered much recent interst in both the ML and TCS communities. Streaming algorithms are a good intermediate step: they have ML applications while being amenable to theoretical study. The adversary can adaptively design future stream elements after observing the algorithm's response to past inputs. Uur simple finding is that existing streaming algorithms, e.g. those based on coresets and sampling based methods, are already robust to the stated model of adversaries. This has wide applications such as in numerical linear algebra and clustering. I believe our experiments are also interesting: they highlight the vulnerability of stremaing algorithms implemented in standard and widely used software libraries such as Apache Spark. </p></div>
+	  		</li>
+
+
+	  		<li>
+	  			<p>  <b>Property Testing of LP-Type Problems </b> 
+	  			<br> Rogers Epstein, Sandeep Silwal
+
+	  			<br> <em> ICALP 2020 </em> [<a href="https://arxiv.org/abs/1911.08320">pdf</a>] [<a href="javascript:story('ES20')">story</a>] [<a href="https://www.youtube.com/watch?v=hbGJW0ZxcHQ">video</a>] </p>
+
+				<div id="ES20" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p>  We must determine if a constrained optimization problem is feasible or `far' from feasible while having random access to few constraints of the problem. A cool example is determining if a set of high-dimensional points, which are colored red and blue, are linearly seperable, or if a constant fraction of points need to be removed for the set to be seperable. Here the constraints correspond to having random access to the points. We show that for a natural class of optimization problems, called LP-Type problems, one only needs random access to a number of constraints which is independent of the size of the problem (and only depends on the dimension). The key idea underlying our analysis is the fact that for LP-type problems, which genralize LPs, few constrants already determine feasibility (for ex. consider the 'basis' of a LP). Such ideas were already used in prior works such as Clarkson's classic randomized algorithm for LPs and we port them over to property testing.  </p></div>
+	  		
+	  		</li>
+	  		
+
+	  		<li>
+	  			<p> <b>Testing Properties of Multiple Distributions with Few Samples </b>  
+	  			<br> Maryam Aliakbarpour, Sandeep Silwal 
+
+	  			<br> <em> ITCS 2020 </em> [<a href="https://arxiv.org/abs/1911.07324">pdf</a>] [<a href="javascript:story('AS20')">story</a>] [<a href="javascript:story('AS20_video')">video</a>]  </p>
+
+				<div id="AS20" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> We consider a noisy version of distribution testing where each sample can be drawn from a possibly different distribution. While this is hopeless in general, we study natural models of similarity across distributions where one can obtain meaningful results. </p></div>
+
+				<div id="AS20_video" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> See the first 20 mins. <a href="https://www.youtube.com/watch?v=8wmq9zDiJN4">here</a>  </p></div>
+	  		</li>
+
+		</ul>
+
+
+
+		<h2 style="padding-bottom:10px">Dimensionality Reduction and Its Applications</h2>
+
+		<ul>
+
+			<li>
+	  			<p> <b>Dimensionality Reduction for Wasserstein Barycenter </b> 
+	  			<br> Zachary Izzo, Sandeep Silwal, Samson Zhou
+	  			<br> <em>  NeurIPS 2021 </em> [<a href="https://arxiv.org/pdf/2110.08991.pdf">pdf</a>] [<a href="javascript:story('ISZ1')">story</a>] [<a href="https://nips.cc/virtual/2021/poster/26009">video</a>] </p>
+
+				<div id="ISZ21" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> We obtain dimensionality reduction bounds for the Wasserstein barycenter problem which go beyond the classical Johnson-Lindenstrauss (JL) lemma. The key idea is to realte the problem to (constrained) $k$-means clustering for which such bounds have been known, e.g., see Makarychev et al. (STOC 2019). Surprisingly, one cannot improve upon the JL lemma if we consider the related problem of optimal transport between two discrete distributions. </p></div>
+	  		</li>
+
+			
+			<li>
+	  			<p> <b>Randomized Dimensionality Reduction for Facility Location and Single-Linkage Clustering</b> 
+	  			<br> Shyam Narayanan*, Sandeep Silwal*, Piotr Indyk, Or Zamir
+	  			<br> <em> ICML 202 </em> [<a href="https://arxiv.org/pdf/2107.01804.pdf">pdf</a>] [<a href="javascript:story('NSIZ21')">story</a>] [<a href="https://icml.cc/virtual/2021/poster/9975">video</a>] </p>
+
+				<div id="NSIZ21" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> We obtain dimensionality reduction bounds for facility location clustering and the minimum spannig tree problem which go beyond the classical Johnson-Lindenstrauss (JL) lemma. For context, the work of Makarychev et al. (STOC 2019) showed that for $k$-means clustering, one can obtain a dimension bound in terms of $\log k$, rather than $\log n$ where $n$ is the number of points. In the problems we consider, there is no parameter "$k$" to parameterize the dimension bound. Instead we use the doubling dimension, which is a measure of intrinsic dimensionality of the dataset: it is at most $O(\log n)$ in the worst-case (i.e. JL bound) but can also be $O(1)$ regardless of $n$. To obtain our bounds, we exploit 'local' properties of our problems inspired by existing algorithms. The paper has a cool experiment and figure showing that doubling dimension is not just an artifact of analysis and its impact can actually be measured in practice. </p></div>
+	  		</li>
+	 
+
+	  		<li>
+	  			<p><b>Using Dimensionality Reduction to Optimize t-SNE</b> 
+	  			<br> Rikhav Shah, Sandeep Silwal 
+	  			<br> <em> OPTML Workshop at NeurIPS 2019 </em> [<a href="https://arxiv.org/abs/1912.01098">pdf</a>] [<a href="javascript:story('SS19')">story</a>] [<a href="https://www.dropbox.com/s/26e6qhklklk9hel/JL_tsne_Opt_ML_2019_poster.pdf?dl=0">poster</a>] </p>
+
+				<div id="SS19" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> t-SNE is a popular visualization tool which maps high dimensional data into two or three dimensions. Unfortunatley it is also extremely slow. We propose a somewhat counterintuitive strategy to mitigate this: doing a dimensionality reduction (such as PCA) <em>before</em> applying t-SNE (which itself is dimensionality reduction). Qualitatively this does not seem to make a difference to the t-SNE output while making t-SNE up to an order of magnitude faster.
+				</p></div>
+	  		</li>
+
+		</ul>
+
+
+
+		<h2 style="padding-bottom:10px">Broader Algorithmic Works</h3>
+
 		<ul>
 
 			<li>  
-	  			<p> <b>Triangle and Four Cycle Counting with Predictions in Graph Stream. </b> <em> Justin Chen, Talya Eden, Piotr Indyk, Honghao Lin, Shyam Narayanan, Ronitt Rubinfeld, Sandeep Silwal, Tal Wagner, David Woodruff, Michael Zhang.</em>  ICLR 2022. [link coming soon!] </p>
-	  		</li>
+	  			<p> <b>Hardness and Algorithms for Robust and Sparse Optimization</b>
+	  				<br> Eric Price, Sandeep Silwal, Samson Zhou
+	  				<br> <em> ICML 2022 </em> [ pdf coming soon!] [<a href="javascript:story('PSZ22')">story</a>]  </p>
 
-	  		<li>  
-	  			<p> <b>Learning-augmented k-means clustering. </b> <em> Jon Ergun, Zhili Feng, Sandeep Silwal, David Woodruff, Samson Zhou. </em> <b>Spotlight Presentation</b> at ICLR 2022. [<a href="https://arxiv.org/pdf/2110.14094.pdf">pdf</a>] </p>
-	  		</li>
+	  				<div id="PSZ22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Optimization problems where one requires sparsity of variables, such as sparse regression or sparse PCA, are an important and well-studied class of problems. Many of these problems are known to be hard in the worst case, and the best theoretical algorithms have an exponential dependence on $k$, the sparsity parameter. We consider a natural version where we are promised that an optimal solution exists. Given this, we design algorithms for such problems with a reduced exponential dependence of $k/2$, all using the same underlying idea. To illustrate this, suppose we want to solve $Ax=b$ where we are promised a $k$-sparse solution $x$ exists. We first guess over all $k/2$ sparse vectors. We then "match" a fixed guess $y$ to the "correct" other $k/2$ sparse vector using fast nearest neighbor search data structures on the query $b-Ay$. This is the classical algorithmic idea of "meet in the middle." We also study (fine-grained) hardness of various formualations of sparse optimization problems and give reductions between sparse and robust regression, filling a gap in the literature.  </p></div>
 
-
-			<li>
-	  			<p> <b>Adversarial Robustness of Streaming Algorithms through Importance Sampling.</b>  <em> Vladimir Braverman, Avinatan Hassidim, Yossi Matias, Mariano Schain, Sandeep Silwal, Samson Zhou.</em> <b> Silver Best Paper Award</b> at Adversarial ML Workshop at ICML 2021. Final version at NeurIPS 2021. [<a href="https://arxiv.org/pdf/2106.14952.pdf">pdf</a>] </p>
-	  		</li>
-
-
-			<li>
-	  			<p> <b>Dimensionality Reduction for Wasserstein Barycenter </b> <em> Zachary Izzo, Sandeep Silwal, Samson Zhou.</em> NeurIPS 2021. [<a href="https://arxiv.org/pdf/2110.08991.pdf">pdf</a>] </p>
-	  		</li>
-
-
-			<li>
-	  			<p> <b>Smoothed Analysis of the Condition Number Under Low-Rank Perturbations.</b>  <em> Rikhav Shah, Sandeep Silwal. </em> RANDOM 2021. [<a href="https://arxiv.org/pdf/2009.01986.pdf">pdf</a>] </p>
-	  		</li>
-
-
-			<li>
-	  			<p> <b>Randomized Dimensionality Reduction for Facility Location and Single-Linkage Clustering.</b> <em> Shyam Narayanan, Sandeep Silwal, Piotr Indyk, Or Zamir.</em>  ICML 2021. [<a href="https://arxiv.org/pdf/2107.01804.pdf">pdf</a>] </p>
 	  		</li>
 
 			<li>
-	  			<p> <b>Learning-based Support Estimation in Sublinear Time.</b> <em> Talya Eden, Piotr Indyk, Shyam Narayanan, Ronitt Rubinfeld, Sandeep Silwal, Tal Wagner.</em>  <b>Spotlight Presentation</b> at ICLR 2021. [<a href="https://arxiv.org/abs/2106.08396">pdf</a>] </p>
-	  		</li>
+	  			<p> <b>Smoothed Analysis of the Condition Number Under Low-Rank Perturbations</b>  
+	  				<br> Rikhav Shah, Sandeep Silwal  
+	  				<br> <em> RANDOM 2021 </em> [<a href="https://arxiv.org/pdf/2009.01986.pdf">pdf</a>] [<a href="javascript:story('SS21')">story</a>] [<a href="https://www.youtube.com/watch?v=gEE1jG4Oejs"> video </a>] </p>
 
+	  				<div id="SS21" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Most works in smoothed analysis assume dense entry-wise perturbation of the input variables. We take a step back and consider a new model of low-rank perturbations. Our main result is that adding a random rank $k$ matrix to a fixed matrix of rank at-least $n-k$ produces a well-conditioned matrix. </p></div>
 
-			<li>
-	  			<p> <b> A note on the universality of ESDs of inhomogeneous random matrices .</b> <em> Vishesh Jain, Sandeep Silwal.</em>  Latin American Journal of Probability and Mathematical Statistics. [<a href="https://arxiv.org/pdf/2006.05418.pdf">pdf</a>] </p>
-	  		</li>
-
-
-	  		<li>
-	  			<p>  <b>Property Testing of LP-Type Problems. </b> <em> Rogers Epstein, Sandeep Silwal.</em>  ICALP 2020. [<a href="https://arxiv.org/abs/1911.08320">pdf</a>] </p>
-	  		</li>
-	  		<li>
-	  			<p> <b>Testing Properties of Multiple Distributions with Few Samples. </b>  <em> Maryam Aliakbarpour, Sandeep Silwal.</em>  ITCS 2020. [<a href="https://arxiv.org/abs/1911.07324">pdf</a>] </p>
-	  		</li>
-
-	  		<li>
-	  			<p><b>Using Dimensionality Reduction to Optimize t-SNE.</b> <em> Rikhav Shah, Sandeep Silwal. </em> OPTML Workshop at NeurIPS 2019. [<a href="https://arxiv.org/abs/1912.01098">pdf</a>] </p>
 	  		</li>
 
 
 	  		<li>  
-	  			<p> <b>Directed Random Geometric Graphs. </b> <em> Jesse Michel, Ramis Movassagh, Sushruth Reddy, Rikhav Shah, Sandeep Silwal.</em>  Journal of Complex Networks.  [<a href="https://arxiv.org/abs/1808.02046">pdf</a>] </p>
+	  			<p> <b>A Concentration Inequality for the Facility Location Problem </b> 
+	  				<br> Sandeep Silwal
+	  				<br> <em> Operations Research Letters, Volume 50 </em> [<a href="https://arxiv.org/pdf/2012.04488.pdf">pdf</a>] [<a href="javascript:story('SORL')">story</a>] </p>
+
+	  				<div id="SORL" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> How well does the objective value of a random instance of the (uniform) facility location problem concentrate? The answer is quite surprising. In the unit square with $n$ uniform points, the interal of concentration is at most $O(n^{1/6})$. </p></div>
 	  		</li>
+
 		</ul>
 
 
-	<h3>Manuscripts</h3>
+		<h2 style="padding-bottom:10px">Miscellaneous</h3>
+
+
 		<ul>
-
-
-	  		<li>  
-	  			<p> <b>A Concentration Inequality for the Facility Location Problem. </b> <em> Sandeep Silwal.</em>  In Submission. [<a href="https://arxiv.org/pdf/2012.04488.pdf">pdf</a>] </p>
+	  		<li>
+	  			<p> <b> A note on the universality of ESDs of inhomogeneous random matrices </b> 
+	  				<br> Vishesh Jain, Sandeep Silwal
+	  				<br> <em>  Latin American Journal of Probability and Mathematical Statistics </em> [<a href="https://arxiv.org/pdf/2006.05418.pdf">pdf</a>] </p>
 	  		</li>
 
 
+	  		<li>  
+	  			<p> <b>Directed Random Geometric Graphs </b> 
+	  				<br> Jesse Michel, Ramis Movassagh, Sushruth Reddy, Rikhav Shah, Sandeep Silwal
+	  				<br> <em> Journal of Complex Networks </em>  [<a href="https://arxiv.org/abs/1808.02046">pdf</a>] [<a href="javascript:story('MMRSS')">story</a>] </p>
+
+	  				<div id="MMRSS" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> A novel model of random digraphs for real-world directed networks inspired by the classical random geometric graph model. Interestingly, the in-degree and out-degree distributions follow different laws (power-law vs binomial). </p></div>
+	  		</li>
 
 
 		</ul>
+
+
 
 	</div>
+
+	<h5>*Authors are always listed in alphabetical order, except if authors are starred, in which case authors are listed in contribution order and starred authors have (equal) first-author contribution.</h5>
 
 	</div>
 
