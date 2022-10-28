@@ -153,7 +153,7 @@ function story(id) {
 	  			<p> <b>Faster Linear Algebra for Distance Matrices</b>  
 	  			<br> Piotr Indyk, Sandeep Silwal
 
-	  			<br> <b>Oral</b>  <em> at NeurIPS 2022 </em> [<a href="">pdf coming soon!</a>] [<a href="javascript:story('IS22')">story</a>] [<a href="https://www.dropbox.com/s/po80fnnbfpkzeyq/Faster%20Linear%20Algebra%20for%20Distance%20Matrices.pdf?dl=0">slides</a>] </p>
+	  			<br> <b>Oral</b>  <em> at NeurIPS 2022 </em> [<a href="https://arxiv.org/abs/2210.15114">pdf</a>] [<a href="javascript:story('IS22')">story</a>] [<a href="https://www.dropbox.com/s/po80fnnbfpkzeyq/Faster%20Linear%20Algebra%20for%20Distance%20Matrices.pdf?dl=0">slides</a>] </p>
 
 				<div id="IS22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> A distance matrix is defined as the matrix $A$ which records pairwise distances between $n$ data points in $\mathbb{R}^d$. They are ubiquitous in ML and data science as they capture similarity matrices and have applications in non-linear dimensionality reduction, visualization, clustering, etc. However, they require $\Omega(n^2)$ time and space for a dataset with $n$ points, making them quite difficult to compute on. We fill this gap and explore faster and scalable algorithms for distance matrices. There are three gems in the paper. (1) For the $\ell_1$ distance metric, we can compute $Ay$ for any vector $y$ in $O(nd)$ time, which is sublinear in the matrix size! Many foundational linear algebra algorithms (power method, iterative methods etc.) use matrix-vector products as the fundamental unit so $Ay$ the 'right' algorithmic primitive to consider. (2) The natural follow up question to (1) is if all metrics admit such fast matrix-vector speedups. This is <em> not </em> the case! We show that for the $\ell_{\infty}$ metric, compute $Ay$ for general $y$ requires $\Omega(n^2)$ time, assuming standard hardness assumptions. (3) Lastly, we consider the question of computing an approximate distance matrix, for example for the $\ell_2$ metric. The most natural way to do this, if one is familiar with some algorithmic tools, is to use the Johnson-Lindenstrauss (JL) lemma: simply project your points onto $O(\log n)$ dimensions and compute the distance matrix in the projected space, which requies $\Theta(n^2 \log n)$ time. Computing distances is in fact one of the most common useage of the JL lemma. We show that one can actually <em> go beyond </em> the JL lemma and comptue an approximate distance matrix in $O(n^2 \text{poly}(\log \log n))$ time! This is the result one would get if we could project onto $O(\text{poly}(\log \log n))$ dimensions using the JL lemma, but this is false as the JL lemma is tight! We use some nice metric compression results to obtian this result.</p></div>
 	  		</li>
@@ -315,38 +315,6 @@ function story(id) {
 		</ul>
 
 
-		<h2 style="padding-bottom:10px">Broader Algorithmic Works</h2>
-
-		<ul>
-
-			<li>  
-	  			<p> <b>Hardness and Algorithms for Robust and Sparse Optimization</b>
-	  				<br> Eric Price, Sandeep Silwal, Samson Zhou
-	  				<br> <em> ICML 2022 </em> [<a href="">pdf coming soon!</a>] [<a href="javascript:story('PSZ22')">story</a>]  </p>
-
-	  				<div id="PSZ22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Optimization problems where one requires sparsity of variables, such as sparse regression or sparse PCA, are an important and well-studied class of problems. Many of these problems are known to be hard in the worst case, and the best theoretical algorithms have an exponential dependence on $k$, the sparsity parameter. We consider a natural version where we are promised that an optimal solution exists. Given this, we design algorithms for such problems with a reduced exponential dependence of $k/2$, all using the same underlying idea. To illustrate this, suppose we want to solve $Ax=b$ where we are promised a $k$-sparse solution $x$ exists. We first guess over all $k/2$ sparse vectors. We then "match" a fixed guess $y$ to the "correct" other $k/2$ sparse vector using fast nearest neighbor search data structures on the query $b-Ay$. This is the classical algorithmic idea of "meet in the middle." We also study (fine-grained) hardness of various formulations of sparse optimization problems and give reductions between sparse and robust regression, filling a gap in the literature.  </p></div>
-
-	  		</li>
-
-			<li>
-	  			<p> <b>Smoothed Analysis of the Condition Number Under Low-Rank Perturbations</b>  
-	  				<br> Rikhav Shah, Sandeep Silwal  
-	  				<br> <em> RANDOM 2021 </em> [<a href="https://arxiv.org/pdf/2009.01986.pdf">pdf</a>] [<a href="javascript:story('SS21')">story</a>] [<a href="https://www.youtube.com/watch?v=gEE1jG4Oejs">video</a>] </p>
-
-	  				<div id="SS21" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Most works in smoothed analysis assume dense entry-wise perturbation of the input variables. We take a step back and consider a new model of low-rank perturbations. Our main result is that adding a random rank $k$ matrix to a fixed matrix of rank at-least $n-k$ produces a well-conditioned matrix. </p></div>
-
-	  		</li>
-
-
-	  		<li>  
-	  			<p> <b>A Concentration Inequality for the Facility Location Problem </b> 
-	  				<br> Sandeep Silwal
-	  				<br> <em> Operations Research Letters, Volume 50 </em> [<a href="https://arxiv.org/pdf/2012.04488.pdf">pdf</a>] [<a href="javascript:story('SORL')">story</a>] </p>
-
-	  				<div id="SORL" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> How well does the objective value of a random instance of the (uniform) facility location problem concentrate? The answer is quite surprising. In the unit square with $n$ uniform points, the interval of concentration is at most $O(n^{1/6})$, an odd exponent. The argument requires Talagrand's concentration inequality which heavily exploits the 'local' structure of the facility location problem. </p></div>
-	  		</li>
-
-		</ul>
 
 
 		<h2 style="padding-bottom:10px">Miscellaneous</h2>
