@@ -17,7 +17,7 @@ function story(id) {
 <head>
 	<meta name="generator" content="Hugo 0.62.0" />
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Sandeep Silwal -  </title><link rel="icon" type="image/png" href=icons/myicon.png /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Sandeep Silwal </title><link rel="icon" type="image/png" href=infinity.png /><meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="alternate" type="application/rss+xml" href="https://sandeepsilwal.com/index.xml" title="Sandeep Silwal" />
 	<meta property="og:title" content="Sandeep Silwal" />
 <meta property="og:description" content="" />
@@ -77,12 +77,12 @@ function story(id) {
 
 		
 	<div class="info"> 
-		<img src="pic_new2.jpg"> 
+		<img src="https://sandeepsilwal.com/pic_new2.jpg"> 
 		<h4>Hi! I am a 4th year Ph.D. student at MIT where I am lucky to be advised by <a href="https://people.csail.mit.edu/indyk/">Piotr Indyk </a>. </h4>
 		
-		<h4> My research interests are broadly in theoretical computer science. Recently, I've been working in the intersection of machine learning and classical algorithms by designing provable algorithms in various ML settings, such as efficient algorithms for large datasets, as well as using ML to inspire algorithm design. </h4>
+		<h4> My interests are broadly in theoretical computer science. Recently, I've been working in the intersection of machine learning and classical algorithms by designing provable algorithms in various ML settings, such as efficient algorithms for processing large datasets, as well as using ML to inspire algorithm design. </h4>
 
-		<h4> Please see my publications below where I've tried to include a brief 'story' for every paper. My goal is to highlight the context in which it was written and what I find interesting about the problem and results. </h4>
+		<h4> Please see my publications below where I've tried to include a brief 'story' for most papers. My goal is to highlight the context in which it was written and what I find interesting about the problem and results. </h4>
 
 
 		<h4>I also help coordinate <a href="http://www.mit.edu/~algoh/"> Algorithms Office Hours </a> at MIT whose goal is to improve communication between theory and applications of algorithms.</h4>
@@ -148,12 +148,22 @@ function story(id) {
 
 		<ul>
 
+
+			<li>
+	  			<p> <b>Faster Linear Algebra for Distance Matrices</b>  
+	  			<br> Piotr Indyk, Sandeep Silwal
+
+	  			<br> <b>Oral</b>  <em> at NeurIPS 2022 </em> [<a href="https://arxiv.org/abs/2210.15114">pdf</a>] [<a href="javascript:story('IS22')">story</a>] [<a href="https://www.dropbox.com/s/po80fnnbfpkzeyq/Faster%20Linear%20Algebra%20for%20Distance%20Matrices.pdf?dl=0">slides</a>] </p>
+
+				<div id="IS22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> A distance matrix is defined as the matrix $A$ which records pairwise distances between $n$ data points in $\mathbb{R}^d$. They are ubiquitous in ML and data science as they capture similarity matrices and have applications in non-linear dimensionality reduction, visualization, clustering, etc. However, they require $\Omega(n^2)$ time and space for a dataset with $n$ points, making them quite difficult to compute on. We fill this gap and explore faster and scalable algorithms for distance matrices. There are three gems in the paper. (1) For the $\ell_1$ distance metric, we can compute $Ay$ for any vector $y$ in $O(nd)$ time, which is sublinear in the matrix size! Many foundational linear algebra algorithms (power method, iterative methods etc.) use matrix-vector products as the fundamental unit so $Ay$ the 'right' algorithmic primitive to consider. (2) The natural follow up question to (1) is if all metrics admit such fast matrix-vector speedups. This is <em> not </em> the case! We show that for the $\ell_{\infty}$ metric, compute $Ay$ for general $y$ requires $\Omega(n^2)$ time, assuming standard hardness assumptions. (3) Lastly, we consider the question of computing an approximate distance matrix, for example for the $\ell_2$ metric. The most natural way to do this, if one is familiar with some algorithmic tools, is to use the Johnson-Lindenstrauss (JL) lemma: simply project your points onto $O(\log n)$ dimensions and compute the distance matrix in the projected space, which requies $\Theta(n^2 \log n)$ time. Computing distances is in fact one of the most common useage of the JL lemma. We show that one can actually <em> go beyond </em> the JL lemma and comptue an approximate distance matrix in $O(n^2 \text{poly}(\log \log n))$ time! This is the result one would get if we could project onto $O(\text{poly}(\log \log n))$ dimensions using the JL lemma, but this is false as the JL lemma is tight! We use some nice metric compression results to obtian this result.</p></div>
+	  		</li>
+
+
 			<li>
 	  			<p> <b>The White-Box Adversarial Data Stream Model</b>  
 	  			<br> Miklos Ajtai, Vladimir Braverman, T.S. Jayram, Sandeep Silwal, Alec Sun, David P. Woodruff, Samson Zhou
 
-	  			<br> <em> PODS 2022 </em>
-	  			<br> [<a href="https://arxiv.org/abs/2204.09136">pdf</a>] [<a href="javascript:story('ABJSSWZ22')">story</a>] [<a href="https://www.dropbox.com/scl/fi/38p1sskcyp7c1avbecoy8/while-box-pods-22.pptx?dl=0&rlkey=4ivm7qx4bbh15djqvlfxyrzln">slides</a>] </p>
+	  			<br> <em> PODS 2022 </em> [<a href="https://arxiv.org/abs/2204.09136">pdf</a>] [<a href="javascript:story('ABJSSWZ22')">story</a>] [<a href="https://www.dropbox.com/scl/fi/38p1sskcyp7c1avbecoy8/while-box-pods-22.pptx?dl=0&rlkey=4ivm7qx4bbh15djqvlfxyrzln">slides</a>] </p>
 
 				<div id="ABJSSWZ22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Streaming algorithms in the presence of an adaptive adversary has been well studied recently. Most papers are in the so called 'black-box' model where the adversary can only observe outputs of the algorithm to design future inputs. Motivated by real-world adversarial attacks, we consider a "white-box" model where the adversary can now also observe the internal randomness used by the algorithm. Unsurprisingly, many tasks become impossible without storing the entire stream. However, one can still obtain non-trivial algorithms. One example is if we assume the adversary is computationally bounded, then we can use the 'shortest integer solution' (SIS) problem to design streaming algorithms: the SIS matrix is used as a sketching matrix. Even if the adversary knows this matrix, it cannot find integer vectors in the kernel which is a property we exploit. More broadly, we employ collision-resistant hash functions as well as the classic Morris counter to design white-box robust algorithms.</p></div>
 	  		</li>
@@ -162,8 +172,8 @@ function story(id) {
 	  			<p> <b>Adversarial Robustness of Streaming Algorithms through Importance Sampling</b>  
 	  			<br> Vladimir Braverman, Avinatan Hassidim, Yossi Matias, Mariano Schain, Sandeep Silwal, Samson Zhou
 
-	  			<br> <em> <b> Silver Best Paper Award</b> at Adversarial ML Workshop at ICML 2021; Final version at NeurIPS 2021 </em>
-	  			<br> [<a href="https://arxiv.org/pdf/2106.14952.pdf">pdf</a>] [<a href="javascript:story('BHMSSZ21')">story</a>] [<a href="https://nips.cc/virtual/2021/poster/28047">video</a>] [<a href="https://www.dropbox.com/s/k8v91k7mwihma6s/importance%20sampling%20neurips%2021.pdf?dl=0">slides</a>] </p>
+	  			<br> <em> <b> Silver Best Paper Award</b> at Adversarial ML Workshop at ICML 2021; Final version at NeurIPS 2021 </em> 
+	  			<br>[<a href="https://arxiv.org/pdf/2106.14952.pdf">pdf</a>] [<a href="javascript:story('BHMSSZ21')">story</a>] [<a href="https://nips.cc/virtual/2021/poster/28047">video</a>] [<a href="https://www.dropbox.com/s/k8v91k7mwihma6s/importance%20sampling%20neurips%2021.pdf?dl=0">slides</a>] </p>
 
 				<div id="BHMSSZ21" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Adversarial robustness has garnered much recent interest in both the ML and TCS communities. Streaming algorithms are a good intermediate step: they have ML applications while being amenable to theoretical study. The adversary can adaptively design future stream elements after observing the algorithm's response to past inputs. Our simple finding is that existing streaming algorithms, e.g. those based on coresets and sampling based methods, are already robust to the stated model of adversaries. This has wide applications such as in numerical linear algebra and clustering. I believe our experiments are also interesting: they highlight the vulnerability of streaming algorithms implemented in standard and widely used software libraries such as Apache Spark. </p></div>
 	  		</li>
@@ -234,18 +244,55 @@ function story(id) {
 
 
 
-		<h2 style="padding-bottom:10px">Broader Algorithmic Works</h3>
+		<h2 style="padding-bottom:10px">Theoretical Limits in Machine Learning</h2>
+
 
 		<ul>
+			<li>  
+	  			<p> <b>Exponentially Improving the Complexity of Simulating the Weisfeiler-Lehman Test with Graph Neural Networks</b>
+	  				<br> Anders Aamand, Justin Y. Chen, Piotr Indyk, Shyam Narayanan, Nicholas Schiefer, Ronitt Rubinfeld, Sandeep Silwal, Tal Wagner
+	  				<br> <em> NeurIPS 2022 </em> [<a href="https://arxiv.org/abs/2211.03232">pdf</a>][<a href="javascript:story('ACINSRSW22')">story</a>]  [<a href="https://www.dropbox.com/s/at35jjn50y937hl/Exponentially%20Improving%20the%20Complexity%20of%20Simulating%20the%20WL%20Test%20with%20GNNS.pdf?dl=0">slides</a>] </p>
+
+	  				<div id="ACINSRSW22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> The Weisfeiler-Lehman (WL) test is a popular heuristic for graph isomorphism. Its claim to fame in the GNN community is the theoretical characterization of Xu et al. which states that message passing GNNs can simulate the WL test and furthermore, these GNNs can only distinguish graphs as well as the WL test. Such works provide a nice qualitative understanding of the expressibility powers of GNNs, but leave opon the question of <em> quantitative </em> understanding which our works fills. We provide an almost tight understanding of the sizes for GNNs (in terms of the number of ReLu units and message size used) to simulte the WL test. The main highlight result is that one can use an almost logarithmic (in the size of the input graph) number of ReLu units and message size to perform the simulation, which provides an exponential improvement over prior works. Along the way we construct a nice primitive for performing hashing using GNNs. </p></div>
+
+	  		</li>
+
 
 			<li>  
 	  			<p> <b>Hardness and Algorithms for Robust and Sparse Optimization</b>
 	  				<br> Eric Price, Sandeep Silwal, Samson Zhou
-	  				<br> <em> ICML 2022 </em> [pdf coming soon!] [<a href="javascript:story('PSZ22')">story</a>]  </p>
+	  				<br> <em> ICML 2022 </em> [<a href="https://arxiv.org/abs/2206.14354">pdf</a>] [<a href="javascript:story('PSZ22')">story</a>] [<a href="https://www.dropbox.com/s/glvxzw5w8qmr9ef/__Hardness%20and%20Algorithms%20for%20Sparse%20Optimization.pdf?dl=0">slides</a>] </p>
 
 	  				<div id="PSZ22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Optimization problems where one requires sparsity of variables, such as sparse regression or sparse PCA, are an important and well-studied class of problems. Many of these problems are known to be hard in the worst case, and the best theoretical algorithms have an exponential dependence on $k$, the sparsity parameter. We consider a natural version where we are promised that an optimal solution exists. Given this, we design algorithms for such problems with a reduced exponential dependence of $k/2$, all using the same underlying idea. To illustrate this, suppose we want to solve $Ax=b$ where we are promised a $k$-sparse solution $x$ exists. We first guess over all $k/2$ sparse vectors. We then "match" a fixed guess $y$ to the "correct" other $k/2$ sparse vector using fast nearest neighbor search data structures on the query $b-Ay$. This is the classical algorithmic idea of "meet in the middle." We also study (fine-grained) hardness of various formulations of sparse optimization problems and give reductions between sparse and robust regression, filling a gap in the literature.  </p></div>
 
 	  		</li>
+
+
+		</ul>
+
+
+
+		<h2 style="padding-bottom:10px">Broader Algorithmic Works</h2>
+
+		<ul>
+
+
+			<li>
+	  			<p> <b>Optimal Algorithms for Linear Algebra in the Current Matrix Multiplication Time </b>  
+	  				<br> Yeshwanth Cherapanamjeri, Sandeep Silwal, David P. Woodruff, Samson Zhou
+	  				<br> <em> SODA 2023 </em> [<a href="">pdf coming soon!</a>]
+
+	  		</li>
+
+
+
+			<li>
+	  			<p> <b>Motif Cut Sparsifiers </b>  
+	  				<br> Michael Kapralov, Mikhail Makarov, Sandeep Silwal, Christian Sohler, Jakab Tardos
+	  				<br> <em> FOCS 2022 </em> [<a href="https://arxiv.org/abs/2204.09951">pdf</a>] [<a href="">story coming soon!</a>]
+
+	  		</li>
+
 
 			<li>
 	  			<p> <b>Smoothed Analysis of the Condition Number Under Low-Rank Perturbations</b>  
@@ -268,7 +315,9 @@ function story(id) {
 		</ul>
 
 
-		<h2 style="padding-bottom:10px">Miscellaneous</h3>
+
+
+		<h2 style="padding-bottom:10px">Miscellaneous</h2>
 
 
 		<ul>
@@ -282,7 +331,7 @@ function story(id) {
 	  		<li>  
 	  			<p> <b>Directed Random Geometric Graphs </b> 
 	  				<br> Jesse Michel, Ramis Movassagh, Sushruth Reddy, Rikhav Shah, Sandeep Silwal
-	  				<br> <em> Journal of Complex Networks </em>  [<a href="https://arxiv.org/abs/1808.02046">pdf</a>] [<a href="javascript:story('MMRSS')">story</a>] </p>
+	  				<br> <em> Journal of Complex Networks </em> [<a href="https://arxiv.org/abs/1808.02046">pdf</a>] [<a href="javascript:story('MMRSS')">story</a>] </p>
 
 	  				<div id="MMRSS" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> A novel model of random digraphs for real-world directed networks inspired by the classical random geometric graph model. Interestingly, the in-degree and out-degree distributions follow different laws (power-law vs binomial). </p></div>
 	  		</li>
