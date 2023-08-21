@@ -74,13 +74,12 @@ function story(id) {
 </div>
 
 
-
 		
 	<div class="info"> 
-		<img src="https://sandeepsilwal.com/pic_new2.jpg"> 
-		<h4>Hi! I am a 4th year Ph.D. student at MIT where I am lucky to be advised by <a href="https://people.csail.mit.edu/indyk/">Piotr Indyk </a>. </h4>
+		<img src="https://sandeepsilwal.com/sandeep_photo_csail.jpg"> 
+		<h4>Hi! I am a final year Ph.D. student at MIT where I am lucky to be advised by <a href="https://people.csail.mit.edu/indyk/">Piotr Indyk </a>. </h4>
 		
-		<h4> My interests are broadly in theoretical computer science. Recently, I've been working in the intersection of machine learning and classical algorithms by designing provable algorithms in various ML settings, such as efficient algorithms for processing large datasets, as well as using ML to inspire algorithm design. </h4>
+		<h4> My interests are broadly in algorithm design. Recently, I've been working in the intersection of machine learning and classical algorithms by designing provable algorithms in various ML settings, such as efficient algorithms for processing large datasets, as well as using ML to inspire and motivate algorithm design. </h4>
 
 		<h4> Please see my publications below where I've tried to include a brief 'story' for most papers. My goal is to highlight the context in which it was written and what I find interesting about the problem and results. </h4>
 
@@ -91,9 +90,16 @@ function story(id) {
 
 	</div>
 
+
+	<h1>Publications</h1>
+
+
+
 	<div class="papers">  
 
-		<h2 style="padding-bottom:10px">Learning-Augmented & Data-Driven Algorithms</h2>
+		<a href="javascript:story('LearningAugmented')"><h2 style="padding-bottom:10px">Learning-Augmented and Data-Driven Algorithm Design</h2></a>
+
+		<div id="LearningAugmented" style="display: none;">
 
 		<ul>
 
@@ -162,7 +168,12 @@ function story(id) {
 
 		</ul>
 
-		<h2 style="padding-bottom:10px">Sublinear and Streaming Algorithms</h2>
+		</div>
+
+
+		<a href="javascript:story('Sublinear')"><h2 style="padding-bottom:10px">Sublinear and Streaming Algorithms</h2></a>
+
+		<div id="Sublinear" style="display: none;">
 
 		<ul>
 
@@ -190,10 +201,11 @@ function story(id) {
 			<li>  
 	  			<p> <b>Sub-quadratic Algorithms for Kernel Matrices via Kernel Density Estimation </b>
 	  				<br> Ainesh Bakshi, Praneeth Kacham, Piotr Indyk, Sandeep Silwal, Samson Zhou
-	  				<br> <em> <b>Spotlight Presentation</b> at ICLR 2023</em>  [<a href="https://arxiv.org/abs/2212.00642">pdf</a>] [<a href="">story coming soon!</a>] </p>
+	  				<br> <em> <b>Spotlight Presentation</b> at ICLR 2023</em>  [<a href="https://arxiv.org/abs/2212.00642">pdf</a>] [<a href="javascript:story('BKISZ23')">story</a>] [<a href="https://iclr.cc/virtual/2023/oral/12713">video and slides</a>] </p>
 
-<!-- 	  				<div id="BKISZ23" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p>  </p></div>
- -->	  		</li>
+				<div id="BKISZ23" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p>We noticed there were many works on designing awesome datastructures for kernel density estimation: they preprocess a dataset and output a datastructure which approximates the kernel density value at any future query in sublinear time. However, there were not many works on using these powerful datastructures in downstream applications. In this work, we show how to use these datastructures to perform fast sampling on kernel graphs: weighted graphs whose edges are the pairwise kernel values between datapoints. Our sampling algorithms are simple and lead to many implications for eigenvector estimation, low-rank approximation, and clustering to name a few.</p></div>
+
+ 		   </li>
 
 
 
@@ -251,9 +263,14 @@ function story(id) {
 
 		</ul>
 
+		</div>
 
 
-		<h2 style="padding-bottom:10px">Dimensionality Reduction and Its Applications</h2>
+
+
+		<a href="javascript:story('DimReduction')"><h2 style="padding-bottom:10px">Dimensionality Reduction and Its Applications</h2></a>
+
+		<div id="DimReduction" style="display: none;">
 
 		<ul>
 
@@ -290,9 +307,15 @@ function story(id) {
 
 		</ul>
 
+		</div>
 
 
-		<h2 style="padding-bottom:10px">Theoretical Limits in Machine Learning</h2>
+
+
+		<a href="javascript:story('TheoreticalLimitsML')"><h2 style="padding-bottom:10px">Theoretical Limits in Machine Learning</h2></a>
+
+		<div id="TheoreticalLimitsML" style="display: none;">
+
 
 
 		<ul>
@@ -318,9 +341,17 @@ function story(id) {
 
 		</ul>
 
+		</div>
 
 
-		<h2 style="padding-bottom:10px">Broader Algorithmic Works</h2>
+
+
+
+		<a href="javascript:story('BroaderAlgorithmicWorks')"><h2 style="padding-bottom:10px">Broader Algorithmic Works</h2></a>
+
+
+		<div id="BroaderAlgorithmicWorks" style="display: none;">
+
 
 		<ul>
 
@@ -328,7 +359,10 @@ function story(id) {
 			<li>
 	  			<p> <b>Robust Algorithms on Adaptive Inputs from Bounded Adversaries </b>  
 	  				<br> Yeshwanth Cherapanamjeri, Sandeep Silwal, David P. Woodruff, Fred Zhang, Qiuyi Zhang, Samson Zhou
-	  				<br> <em> ICLR 2023 </em> [<a href="https://arxiv.org/abs/2304.07413">pdf</a>][<a href="">story coming soon!</a>]
+	  				<br> <em> ICLR 2023 </em> [<a href="https://arxiv.org/abs/2304.07413">pdf</a>] [<a href="javascript:story('CSWZZZ23')">story</a>] [<a href="https://www.dropbox.com/scl/fi/ovfcuwd5sg5gjmwsdsfg4/iclr23_robust_poster.pdf?rlkey=fzhsa4l73c2vliaeyisjk3w3n&dl=0">poster</a>] </p>
+
+
+	  				<div id="CSWZZZ23" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Inspired by related works in streaming, we use differentiall privacy to design adversarially robust algorithms in many offline settings. The cool observation used is that we can view the internal randomness of randomized algorithms as the 'private' dataset which we wish to protect from adversaries via differential privacy. </p></div>
 
 	  		</li>
 
@@ -337,7 +371,7 @@ function story(id) {
 			<li>
 	  			<p> <b>Optimal Algorithms for Linear Algebra in the Current Matrix Multiplication Time </b>  
 	  				<br> Yeshwanth Cherapanamjeri, Sandeep Silwal, David P. Woodruff, Samson Zhou
-	  				<br> <em> SODA 2023 </em> [<a href="https://arxiv.org/abs/2211.09964">pdf</a>]
+	  				<br> <em> SODA 2023 </em> [<a href="https://arxiv.org/abs/2211.09964">pdf</a>] </p>
 
 	  		</li>
 
@@ -346,7 +380,10 @@ function story(id) {
 			<li>
 	  			<p> <b>Motif Cut Sparsifiers </b>  
 	  				<br> Michael Kapralov, Mikhail Makarov, Sandeep Silwal, Christian Sohler, Jakab Tardos
-	  				<br> <em> FOCS 2022 </em> [<a href="https://arxiv.org/abs/2204.09951">pdf</a>] [<a href="">story coming soon!</a>]
+	  				<br> <em> FOCS 2022 </em> [<a href="https://arxiv.org/abs/2204.09951">pdf</a>] [<a href="javascript:story('KMSST22')">story</a>] </p>
+
+
+	  				<div id="KMSST22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Much work has gone into sparsifying dense graphs to preserve the size of cuts. In this work, we ask a new question: can we sparsify graphs to preserve triangle counts, or in general counts of small subgraphs, across cuts? </p></div>
 
 	  		</li>
 
@@ -371,18 +408,24 @@ function story(id) {
 
 		</ul>
 
+		</div>
 
 
 
-		<h2 style="padding-bottom:10px">Miscellaneous</h2>
 
+
+<!-- [<a href="javascript:story('KMSST22')">story</a>]
+ -->
+		<a href="javascript:story('Miscellaneous')"><h2 style="padding-bottom:10px">Miscellaneous</h2></a>
+
+		<div id="Miscellaneous" style="display: none;">
 
 		<ul>
 
 			<li>
 	  			<p> <b>Improved Space Bounds for Learning with Experts </b>  
 	  				<br> Anders Aamand, Justin Y. Chen, Huy Lê Nguyễn, Sandeep Silwal
-	  				<br> [<a href="https://arxiv.org/abs/2303.01453">pdf</a>] [<a href="">story coming soon!</a>]
+	  				<br> <em> ACDA 2023 (Poster) </em> [<a href="https://arxiv.org/abs/2303.01453">pdf</a>] </p>
 
 	  		</li>
 
@@ -405,6 +448,9 @@ function story(id) {
 
 
 		</ul>
+
+	    </div>
+
 
 
 
