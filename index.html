@@ -77,7 +77,7 @@ function story(id) {
 		
 	<div class="info"> 
 		<img src="https://sandeepsilwal.com/sandeep_photo_csail.jpg"> 
-		<h4>Hi! I am a final year Ph.D. student at MIT where I am lucky to be advised by <a href="https://people.csail.mit.edu/indyk/">Piotr Indyk </a>. </h4>
+		<h4>Hi! I am a final year Ph.D. student at MIT where I am lucky to be advised by <a href="https://people.csail.mit.edu/indyk/">Piotr Indyk </a>. I am on the job market this year!</h4>
 		
 		<h4> My interests are broadly in algorithm design. Recently, I've been working in the intersection of machine learning and classical algorithms by designing provable algorithms in various ML settings, such as efficient algorithms for processing large datasets, as well as using ML to inspire and motivate algorithm design. </h4>
 
@@ -94,10 +94,9 @@ function story(id) {
 	<h1>Publications</h1>
 
 
-
 	<div class="papers">  
 
-		<a href="javascript:story('LearningAugmented')"><h2 style="padding-bottom:10px">Learning-Augmented and Data-Driven Algorithm Design</h2></a>
+		<a href="javascript:story('LearningAugmented')"><h2 style="padding-bottom:10px"> > Learning-Augmented and Data-Driven Algorithm Design</h2></a>
 
 		<div id="LearningAugmented" style="display: none;">
 
@@ -106,20 +105,19 @@ function story(id) {
 			<li>  
 	  			<p> <b>KwikBucks: Correlation Clustering with Cheap-Weak and Expensive-Strong Signals </b>
 	  				<br> Sandeep Silwal*, Sara Ahmadian, Andrew Nystrom, Andrew McCallum, Deepak Ramachandran, Seyed Mehran Kazemi
-	  				<br> <em> ICLR 2023 </em> [<a href="https://openreview.net/pdf?id=p0JSSa1AuV">pdf</a>] [<a href="">story coming soon!</a>] </p>
+	  				<br> <em> ICLR 2023 </em> [<a href="https://openreview.net/pdf?id=p0JSSa1AuV">pdf</a>] [<a href="javascript:story('SANMRK23')">story</a>]  </p>
 
-<!-- 	  				<div id="SANMRK23" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p>  </p></div>
- -->	  		</li>
+	  				<div id="SANMRK23" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> The work explores if we can efficiently query large ML models, more precisely large language models, to solve concrete downstream tasks. We focus on clustering: we are given a set of $n$ sentences of text documents and query access to a large LLM which provides high-quality pairwise similarity scores for every pair of sentences of texts. Ideally, we would query the model on all $\Theta(n^2)$ pairs to obtain a high-quality similarity matrix, which can be used for many types of clustering algorithms downstream. However, this is not feasible in practice due to the prohibitive resource costs required to make a large number of queries. For ex, even if $n = 10^6$, finding the 'ground truth' similarities as computed by the model requires on the order of $10^{12}$ queries! We solve this challenging problem via an algorithmic lens. First we narrow down to the concrete clustering problem of correlation clustering. Then, we use the fact that often times, very efficient but lower quality hints/predictions are available for text similarity. Using the idiosyncrasies of correlation clustering coupled with readily available hints, we are able to query the model a very limited number of times while still obtaining a clustering comparable to the hypothetical case where querying all pairs is feasible. We also theoretically model the setting and show that for correlation clustering, a linear number of queries is sufficient to obtain close to the optimal clustering quality. </p></div>
+	  		</li>
 
 
 			
 			<li>  
 	  			<p> <b>Learning-Augmented Algorithms for Online Linear and Semidefinite Programming </b>
 	  				<br> Elena Grigorescu, Young-San Lin, Sandeep Silwal, Maoyuan Song, Samson Zhou
-	  				<br> <em> NeurIPS 2022 </em> [<a href="https://arxiv.org/abs/2209.10614">pdf</a>][<a href="">story coming soon!</a>]  </p>
+	  				<br> <em> NeurIPS 2022 </em> [<a href="https://arxiv.org/abs/2209.10614">pdf</a>]  </p>
 
-<!-- 	  				<div id="GLSSZ22" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p>  </p></div>
- -->	  		</li>
+	  		</li>
 
 
 			<li>  
@@ -171,7 +169,7 @@ function story(id) {
 		</div>
 
 
-		<a href="javascript:story('Sublinear')"><h2 style="padding-bottom:10px">Sublinear and Streaming Algorithms</h2></a>
+		<a href="javascript:story('Sublinear')"><h2 style="padding-bottom:10px"> > Sublinear and Streaming Algorithms</h2></a>
 
 		<div id="Sublinear" style="display: none;">
 
@@ -181,18 +179,21 @@ function story(id) {
 			<li>  
 	  			<p> <b>Learned Interpolation for Better Streaming Quantile Approximation with Worst Case Guarantees </b>
 	  				<br> Nicholas Schiefer*, Justin Y. Chen, Piotr Indyk, Shyam Narayanan, Sandeep Silwal, Tal Wagner
-	  				<br> <em> ACDA 2023</em>  [<a href="https://arxiv.org/abs/2304.07652">pdf</a>] [<a href="">story coming soon!</a>] </p>
+	  				<br> <em> ACDA 2023</em>  [<a href="https://arxiv.org/abs/2304.07652">pdf</a>] [<a href="javascript:story('SCINSW23')">story</a>] </p>
 
-<!-- 	  				<div id="SCINSW23" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p>  </p></div> -->
+	  				<div id="SCINSW23" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> We improve the empirical performance of streaming quantile estimation algorithms while retaining worst-case guarantees. The main (and simple) idea is to approximate the quantiles in a stream via linear functions. This is motivated by the fact that many CDFs in the real world are quite smooth, meaning a linear interpolation obtians better approximation compared to step functions, which the state of the art theoretical algorithms use. While the idea is simple, we had a challenging time inacting it in practice to ensure both practical efficiency and theoretical gurantees. We ultimately suceeded by considering an algorithm which starts off as the standard theoretical algorithms, but switches to a linear interplation at an intermediate step, obtaining 'the best of both worlds'.</p></div>
 	  		</li>
 
 
 			<li>  
 	  			<p> <b>Data Structures for Density Estimation </b>
 	  				<br> Anders Aamand, Alexandr Andoni, Justin Y Chen, Piotr Indyk, Shyam Narayanan, Sandeep Silwal
-	  				<br> <em> ICML 2023</em>  [<a href="">pdf coming soon!</a>] [<a href="">story coming soon!</a>] </p>
+	  				<br> <em> ICML 2023</em>  [<a href="https://arxiv.org/abs/2306.11312">pdf</a>]  [<a href="javascript:story('AACINS23')">story</a>] [<a href="https://www.dropbox.com/scl/fi/kzc3gjt790786y8ouyrob/density_icml.pdf?rlkey=v0w3ml8xkug70d58xnpdyp958&dl=0">slides</a>] [<a href="">video coming soon!</a>]</p>
 
-<!-- 	  				<div id="AACINS23" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p>  </p></div> -->
+				<div id="AACINS23" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> We consider the following problem: we are given knowledge of $k$ discrete distributions $v_i$ for $1 \le i \le k$ over the domain $[n] = \{1, \cdots ,n\}$ which we can preprocess. Then we get samples from an unknown discrete distribution $p$, also over $[n]$. The goal is to output the closest distribution to $p$ among the $v_i$’s in TV distance (up to some small additive error). The state of the art algorithms require $\Theta(\log k)$ samples and run in near linear time.
+
+				We introduce a fresh perspective on the problem and ask if we can output the closest distribution in sublinear time. This question is particularly motivated as the problem is a generalization of the traditional nearest neighbor search problem: if we take enough samples, we can learn $p$ explicitly up to low TV distance and then find the closest $v_i$ in $o(k)$ time using standard nearest neighbor search algorithms. However, this approach requires $\Omega(n)$ samples. Thus, it is natural to ask: can we obtain both sublinear number of samples and sublinear query time? We present some nice progress towards this question. </p></div>
+
 	  		</li>
 
 
@@ -268,7 +269,7 @@ function story(id) {
 
 
 
-		<a href="javascript:story('DimReduction')"><h2 style="padding-bottom:10px">Dimensionality Reduction and Its Applications</h2></a>
+		<a href="javascript:story('DimReduction')"><h2 style="padding-bottom:10px"> > Dimensionality Reduction and Its Applications</h2></a>
 
 		<div id="DimReduction" style="display: none;">
 
@@ -312,7 +313,7 @@ function story(id) {
 
 
 
-		<a href="javascript:story('TheoreticalLimitsML')"><h2 style="padding-bottom:10px">Theoretical Limits in Machine Learning</h2></a>
+		<a href="javascript:story('TheoreticalLimitsML')"><h2 style="padding-bottom:10px"> > Theoretical Limits in Machine Learning</h2></a>
 
 		<div id="TheoreticalLimitsML" style="display: none;">
 
@@ -347,7 +348,7 @@ function story(id) {
 
 
 
-		<a href="javascript:story('BroaderAlgorithmicWorks')"><h2 style="padding-bottom:10px">Broader Algorithmic Works</h2></a>
+		<a href="javascript:story('BroaderAlgorithmicWorks')"><h2 style="padding-bottom:10px"> > Broader Algorithmic Works</h2></a>
 
 
 		<div id="BroaderAlgorithmicWorks" style="display: none;">
@@ -414,9 +415,8 @@ function story(id) {
 
 
 
-<!-- [<a href="javascript:story('KMSST22')">story</a>]
- -->
-		<a href="javascript:story('Miscellaneous')"><h2 style="padding-bottom:10px">Miscellaneous</h2></a>
+
+		<a href="javascript:story('Miscellaneous')"><h2 style="padding-bottom:10px"> > Miscellaneous</h2></a>
 
 		<div id="Miscellaneous" style="display: none;">
 
@@ -452,13 +452,38 @@ function story(id) {
 	    </div>
 
 
-
-
-	</div>
-
 	<h5>*Authors are always listed in alphabetical order, except if authors are starred, in which case authors are listed in contribution order and starred authors have (equal) first-author contribution.</h5>
 
+
+	
+	<a href="javascript:story('Media')"><h1 style="padding-bottom:10px"> Media</h1></a>
+
+		<div id="Media" style="display: none;">
+
+		<ul> 
+
+			<li> <p>A Forbes <a href="https://www.forbes.com/sites/johnwerner/2023/08/03/algorithms-can-learn-and-they-probably-should-saving-resources-for-the-future/?sh=1fe62ade7ae3">article</a> about my work and the accopying <a href="https://www.youtube.com/watch?v=se1zybPIaeA">talk</a>, given at CSAIL + Imagination in Action: AI Frontier & Implications event in celebration of CSAIL's 60th anniversary. </p></li>
+
+			<li> A <a href="https://www.youtube.com/watch?v=H33OlvlqRTo">talk</a> I gave at the CMU Theory Lunch about our paper "Randomized Dimensionality Reduction for Facility Location and Single-Linkage Clustering". </li>
+
+
+			<li> A <a href="https://www.youtube.com/watch?v=kjfxfcZGs4o">talk</a> I gave at the Google Algorithms Seminar about our paper "Faster Linear Algebra for Distance Matrices". </li>
+
+			<li> Some <a href="https://twitter.com/MIT_CSAIL/status/1672635813555843074">Twitter</a> <a href="https://twitter.com/MIT_CSAIL/status/1670099092259610626?s=20">coverage</a> of our work. </li>
+
+			<li> An <a href="https://rjlipton.wpcomstaging.com/2020/03/08/the-virtue-of-closed-problems/">article</a> from a scientist I greatly admire. </li>
+
+
+		</ul>
+	    </div>
+
 	</div>
+
+	</div>
+
+
+
+
 
 	
 
