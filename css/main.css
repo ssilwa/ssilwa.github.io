@@ -172,6 +172,12 @@ ul {
 	text-decoration: none !important;
 }
 
+.site-title-small a {
+    color: #333;
+    text-decoration: none !important;
+    font-size:  50%;
+}
+
 .post ul li {
     margin-bottom: 10px;
 }
