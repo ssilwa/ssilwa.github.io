@@ -447,7 +447,7 @@ ul {
 
 .papers li{
     margin: 10px 0;
-}
+}: 
 
 .info img{
     float:right;
@@ -455,5 +455,12 @@ ul {
     margin-left:15px;
     position: relative;
     top:-10px;
+}
+
+.site-title img{
+    float: right;
+    width: 50%;
+    height: auto;
+    position: relative;
 }
 
