@@ -92,10 +92,32 @@
 			<li>  
 	  			<p> <b> A Bi-metric Framework for Fast Similarity Search  </b>
 	  				<br> Haike Xu*, Sandeep Silwal, Piotr Indyk
+	  				<br> <em> <b>Best Paper Award </b> at The 1st Workshop on Vector Databases, ICML 2025</em> 
 	  				<br> <em> Preprint</em>  [<a href="https://arxiv.org/abs/2406.02891">pdf</a>] [<a href="javascript:story('XSI24')">story</a>] [<a href="https://www.youtube.com/watch?v=W1ww23ZJC3s">video</a>] </p>
 
 		  			<div id="XSI24" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p>  We propose a new "bi-metric" framework for designing nearest neighbor data structures. Our framework assumes two dissimilarity functions: a *ground-truth* metric that is accurate but expensive to compute (e.g., embeddings from a large or expensive neural network to compare two sentences), and a *proxy* metric that is cheaper but less accurate (e.g., embeddings from a very small or local network). In both theory and practice, we show how to construct data structures using only the proxy metric such that the query procedure achieves the accuracy of the expensive metric, while only using a limited number of calls to both metrics. In many cases, we can beat the popular "re-ranking" baseline through the use of some pretty cool graph-based data-structures!</p></div>
 	  		</li>
+
+
+
+
+			<li>  
+	  			<p> <b>Differentially Private Gomory-Hu Trees  </b>
+	  				<br> Anders Aamand, Justin Y. Chen, Mina Dalirrooyfard, Slobodan Mitrović, Yuriy Nevmyvaka, Sandeep Silwal, Yinzhan Xu
+	  				<br> <em>Preprint</em>  [<a href="https://arxiv.org/abs/2408.01798">pdf</a>] [<a href="javascript:story('ACDMNSX24')">story</a>] </p>
+
+	  				<div id="ACDMNSX24" style="display: none; border:1.5px solid black;padding:3px;margin-bottom:3px;"><p> Computing various notions of graph cuts under differential privacy (DP) has been extensively studied. Our paper fills in the following gap in this literature: ignoring privacy parameters, computing a global min-cut only incurs $\tilde{O}(1)$ error for pure DP. Computing all possible cuts incurs $\tilde{O}(n^{3/2}$ error, and computing a single min-cut incurs $\tilde{O}(n)$ error. Thus, it is natural to ask what happens if we want to compute all pairs min-cut. We show that privately reporting all pair min-cuts only incurs $\tilde{O}(n)$ error, which aligns with the single minimum-cut case. Along the way, we also release a private Gomory-Hu tree, which neatly captures all minimum cuts in a tree structure. An interesting open question raised by our work is if $\tilde{O}(n)$ error can be improved on if we just want all pair min-cut values, rather than the cuts themselves. </p></div>
+
+	  		</li>
+
+
+	  		<li>  
+	  			<p> <b> Improved Approximations for Hard Graph Problems using Predictions  </b>
+	  				<br> Anders Aamand, Justin Y. Chen, Siddharth Gollapudi, Sandeep Silwal, Hao Wu
+	  				<br> <em> ICML 2025</em>  [<a href="https://arxiv.org/abs/2505.23967">pdf</a>] [<a href="">story coming soon!</a>] </p>
+
+	  		</li>
+
 
 
 
