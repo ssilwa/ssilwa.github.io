@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop on the Intersections of Differential Privacy and Sublinear Algorithms</title>
+    <style>
+        :root {
+            --primary-color: #003366; /* TTIC-esque dark blue */
+            --secondary-color: #f4f4f4;
+            --text-color: #333;
+            --link-color: #0055a4;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px 40px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0 20px 0;
+            border-bottom: 2px solid var(--primary-color);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+
+        .subtitle {
+            font-size: 1.2em;
+            color: #555;
+            font-weight: bold;
+        }
+
+        .dates-location {
+            font-size: 1.1em;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        nav {
+            text-align: center;
+            background: var(--primary-color);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .participants-list {
+            column-count: 2;
+            column-gap: 40px;
+            list-style-type: disc;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .schedule-table th {
+            background-color: #f8f8f8;
+            color: var(--primary-color);
+            width: 25%;
+        }
+
+        .alert-box {
+            background-color: #e7f3fe;
+            border-left: 6px solid #2196F3;
+            margin-bottom: 15px;
+            padding: 15px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            font-size: 0.9em;
+            color: #777;
+            border-top: 1px solid #ddd;
+        }
+
+        @media (max-width: 768px) {
+            .participants-list {
+                column-count: 1;
+            }
+            .container {
+                padding: 15px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#organizers">Organizers</a>
+    <a href="#participants">Participants</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#registration">Registration</a>
+</nav>
+
+<div class="container">
+    <header>
+        <h1>Workshop on the Intersections of Differential Privacy and Sublinear Algorithms</h1>
+        <div class="subtitle">Toyota Technological Institute at Chicago (TTIC)</div>
+        <div class="dates-location">Dates:  July 27–29, 2026 | Location: TTIC, Chicago, IL</div>
+    </header>
+
+    <section id="about">
+        <h2>About the Workshop</h2>
+        <p>Privacy is an essential and often non-negotiable requirement in data analysis and machine learning. In response, the rigorous framework of differential privacy (DP) has emerged as the de facto standard for mitigating privacy concerns. Reflecting its broad impact, there has been a surge of research on differentially private algorithms, with corresponding publications appearing in leading TCS and ML venues.</p>
+        
+        <p>Within the sublinear algorithm community, an emerging heuristic suggests that sublinear algorithms are inherently well-suited for DP. This follows from DP composition theorems, which stipulate that each data access draws from the limited privacy budget; hence, algorithms minimizing data access, the main property of sublinear approaches, are especially effective in DP settings. Perhaps surprisingly, DP techniques have also inspired the design of non-DP algorithms in several areas, including adversarial robustness, online learning, and dynamic and quantum algorithms.</p>
+
+        <p>This workshop will explore connections between DP and other algorithmic disciplines in the following ways:</p>
+        <ol>
+            <li>Applying the existing algorithmic toolkit to create new DP solutions, </li>
+            <li>Leveraging DP tools in designing efficient non-DP algorithms, </li>
+            <li> Bring researchers together with the explicit goal of highlighting, fostering, and extending the algorithmic connections between DP and sublinear models of computation. </li>
+        </ol>
+
+    </section>
+
+    <section id="organizers">
+        <h2>Organizers</h2>
+        <ul>
+            <li><a href="https://web.cs.ucdavis.edu/~mitrovic/">Slobodan Mitrović</a> (UC Davis)</li>
+            <li><a href="https://sandeepsilwal.com/" >Sandeep Silwal</a> (University of Wisconsin-Madison)</li>
+            <li><a href="https://people.csail.mit.edu/ronitt/" >Ronitt Rubinfeld</a> (MIT)</li>
+
+        </ul>
+    </section>
+
+    <section id="participants">
+        <h3>Confirmed Participants (If you are interested in joining, please see registration below)</h3>
+        <ul class="participants-list">
+  <li><a href="https://pepy.github.io/">Pan Peng</a> (University of Science and Technology of China)</li>
+  <li><a href="https://cs-people.bu.edu/sofya/">Sofya Raskhodnikova</a> (Boston University)</li>
+  <li><a href="https://www.cs.purdue.edu/homes/egrigore/">Elena Grigorescu</a> (Purdue University)</li>
+  <li><a href="https://people.eecs.berkeley.edu/~minilek/">Jelani Nelson</a> (UC Berkeley)</li>
+  <li><a href="https://www.ccs.neu.edu/home/hlnguyen/">Huy Nguyễn</a> (Northeastern University)</li>
+  <li><a href="https://omribene.cs.technion.ac.il/">Omri Ben-Eliezer</a> (Ariel University)</li>
+  <li><a href="https://samsonzhou.github.io/">Samson Zhou</a> (Texas A&M University)</li>
+  <li><a href="https://www.mit.edu/~mahabadi/">Sepideh Mahabadi</a> (Microsoft Research)</li>
+  <li><a href="https://maryamaliakbarpour.github.io/">Maryam Aliakbarpour</a> (Rice University)</li>
+  <li><a href="https://sites.google.com/view/jalajupadhyay/home">Jalaj Upadhyay</a> (Rutgers University)</li>
+  <li><a href="https://www.cs.jhu.edu/~mdinitz/">Michael Dinitz</a> (Johns Hopkins University)</li>
+  <li><a href="http://www.gautamkamath.com/">Gautam Kamath</a> (University of Waterloo)</li>
+  <li><a href="https://quanquancliu.com/">Quanquan Liu</a> (Yale University)</li>
+        </ul>
+    </section>
+
+    <section id="schedule">
+        <h2>Tentative Schedule (All time are Central)</h2>
+        <h3>Day 1</h3>
+        <table class="schedule-table">
+            <tr><th>9:30 AM – 10:00 AM</th><td>Informal hangout, coffee, breakfast</td></tr>
+            <tr><th>10:00 AM – 10:30 AM</th><td>Brief introductions</td></tr>
+            <tr><th>10:30 AM – 11:00 AM</th><td>Research Talk 1</td></tr>
+            <tr><th>11:00 AM – 11:30 AM</th><td>Research Talk 2</td></tr>
+            <tr><th>11:30 AM – 1:30 PM</th><td>Lunch</td></tr>
+            <tr><th>1:30 PM – 2:30 PM</th><td>Open problem session</td></tr>
+            <tr><th>2:30 PM – 3:00 PM</th><td>Coffee break</td></tr>
+            <tr><th>3:00 PM – 4:30 PM</th><td>Forming informal groups around common interests; work in groups</td></tr>
+            <tr><th>4:30 PM</th><td>Official end of day (Participants can continue working / dinner together)</td></tr>
+        </table>
+
+        <h3>Day 2</h3>
+        <table class="schedule-table">
+            <tr><th>9:30 AM – 10:00 AM</th><td>Informal hangout, coffee, breakfast</td></tr>
+            <tr><th>10:00 AM – 10:30 AM</th><td>Research Talk 3</td></tr>
+            <tr><th>10:30 AM – 11:00 AM</th><td>Research Talk 4</td></tr>
+            <tr><th>11:00 AM – 11:30 AM</th><td>Research Talk 5</td></tr>
+            <tr><th>11:30 AM – 1:30 PM</th><td>Lunch</td></tr>
+            <tr><th>1:30 PM – 2:00 PM</th><td>Research Talk 6</td></tr>
+            <tr><th>2:00 PM – 2:30 PM</th><td>Research Talk 7</td></tr>
+            <tr><th>2:30 PM – 3:00 PM</th><td>Coffee break</td></tr>
+            <tr><th>3:00 PM – 4:00 PM</th><td>Work in groups</td></tr>
+            <tr><th>4:00 PM – 4:45 PM</th><td>Groups present progress on conjectures, problems, new thoughts</td></tr>
+            <tr><th>5:00 PM</th><td>Official end of day (Participants can continue working / dinner together)</td></tr>
+        </table>
+
+        <h3>Day 3 (Morning)</h3>
+        <table class="schedule-table">
+            <tr><th>9:30 AM – 10:00 AM</th><td>Informal hangout, coffee, breakfast</td></tr>
+            <tr><th>10:00 AM – 10:30 AM</th><td>Research Talk 8</td></tr>
+            <tr><th>10:30 AM – 11:00 AM</th><td>Research Talk 9</td></tr>
+            <tr><th>11:00 AM – 12:00 PM</th><td>Final group meetings, end of workshop!</td></tr>
+            </table>
+    </section>
+
+    <section id="registration">
+        <h2>Registration & Participation</h2>
+        <div class="alert-box">
+            <strong>Interested in attending?</strong> The workshop is open to the entire community! If you are interested in participating, please sign up using <a href="https://forms.gle/NPDcHm28xFjmPsx38"> this Google form. </a>
+        </div>
+    </section>
+    
+    <section id="local-info">
+        <h2>Local Information</h2>
+        <p>Toyota Technological Institute at Chicago (TTIC).  6045 S Kenwood Ave, Chicago, IL 60637. <a href="https://samsonzhou.github.io/Getting-to-TTIC-Maps.pdf">How to get there.</a> </p>
+
+        <h3>Hotel Information</h3>
+        <p>Here are some nearby hotels, but it is pretty easy to get to TTIC even if you are staying further away:</p>
+<ul> 
+    <li><a href="https://www.thestudyatuniversityofchicago.com/">The Study</a> - Located right next to TTIC.</li> 
+    <li><a href="https://www.hyatt.com/en-US/hotel/illinois/hyatt-place-chicago-south-university-medical-center/chizu">Hyatt Place</a> - Located on Harper Ave. near 53rd St.</li> 
+    <li><a href="https://sophyhotel.com/">Sophy Hotel</a> - Located on 53rd St.</li> 
+</ul>
+
+        <h3>(Biased) Restaurant Recommendations</h3>
+        <ul>
+            <li> <a href="https://www.google.com/maps/place/Qiao+Lin+Hotpot+-+Chicago+Chinatown/@41.8538963,-87.6524834,14z/data=!3m1!5s0x880e2c5f0f3eea5d:0xb2582f18c27eba3e!4m10!1m2!2m1!1sqiaolin+hotpot!3m6!1s0x880e2d86663be7bd:0xdc7586fcc3d76f52!8m2!3d41.8539185!4d-87.6415922!15sCg5xaWFvbGluIGhvdHBvdFoQIg5xaWFvbGluIGhvdHBvdJIBEmhvdF9wb3RfcmVzdGF1cmFudOABAA!16s%2Fg%2F11frp512fp?entry=ttu&g_ep=EgoyMDI2MDMzMC4wIKXMDSoASAFQAw%3D%3D"> Qiao Lin Hotpot </a>  </li>
+            
+            <li> <a href="https://www.google.com/maps/place/Cafe+Beograd/@41.958414,-87.7772741,12.51z/data=!4m10!1m2!2m1!1sserbian+breafkast!3m6!1s0x880fcd8b78ce8957:0xd10c0d38082d9835!8m2!3d41.9537535!4d-87.7021033!15sChFzZXJiaWFuIGJyZWFma2FzdFoTIhFzZXJiaWFuIGJyZWFma2FzdJIBEnNlcmJpYW5fcmVzdGF1cmFudJoBJENoZERTVWhOTUc5blMwVkpRMEZuU1VOSloyWnFlR3hSUlJBQuABAPoBBAgAED8!16s%2Fg%2F1tfw3mxn?entry=ttu&g_ep=EgoyMDI2MDMzMC4wIKXMDSoASAFQAw%3D%3D"> Cafe Beograd </a> </li>
+            
+            <li> <a href="https://www.google.com/maps/place/Kabobi+-+Persian+and+Mediterranean+Grill/@41.9686641,-87.7120832,17z/data=!3m1!4b1!4m6!3m5!1s0x880fcde53cdf6645:0xf8547f8f5e0dfdb3!8m2!3d41.9686601!4d-87.7095083!16s%2Fg%2F1q6j7gpyd?entry=ttu&g_ep=EgoyMDI2MDMzMC4wIKXMDSoASAFQAw%3D%3D"> Kabobi </a> </li>
+            
+            
+        </ul>
+    </section>
+
+</div>
+
+</body>
+</html>
